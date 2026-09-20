@@ -16,7 +16,8 @@ import {
   ChevronDown,
   Sparkles,
   School,
-  ExternalLink
+  ExternalLink,
+  Clock
 } from 'lucide-react';
 
 export const PublicLayout = ({ children, activePage, onNavigate }) => {

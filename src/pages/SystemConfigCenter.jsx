@@ -53,7 +53,7 @@ const DEFAULT_SYSTEM_CONFIG = {
     branchCode: 'TES-MAIN-01',
     crossCampusEnrollment: 'Single Campus Mode (Multi-Branch Architecture Ready)',
     registeredBranches: [
-      { id: 'b-1', name: 'The Education Space Academy (Main Campus)', code: 'TES-MAIN-01', type: 'Headquarters / Main', status: 'OPERATIONAL', city: 'Islamabad, Pakistan' }
+      { id: 'b-1', name: 'The Education Space Academy (Main Campus)', code: 'TES-MAIN-01', type: 'Headquarters / Main', status: 'OPERATIONAL', city: 'Qasimabad, Hyderabad, Sindh' }
     ]
   },
   academic: {
@@ -215,7 +215,7 @@ export const SystemConfigCenter = () => {
       return;
     }
     const currentBranches = config.campuses?.registeredBranches || [
-      { id: 'b-1', name: 'The Education Space Academy (Main Campus)', code: 'TES-MAIN-01', type: 'Headquarters / Main', status: 'OPERATIONAL', city: 'Islamabad, Pakistan' }
+      { id: 'b-1', name: 'The Education Space Academy (Main Campus)', code: 'TES-MAIN-01', type: 'Headquarters / Main', status: 'OPERATIONAL', city: 'Qasimabad, Hyderabad, Sindh' }
     ];
     const newBranch = {
       id: `b-${Date.now()}`,
@@ -617,7 +617,7 @@ export const SystemConfigCenter = () => {
                   </thead>
                   <tbody className="divide-y divide-slate-100 text-xs">
                     {(config.campuses?.registeredBranches || [
-                      { id: 'b-1', name: 'The Education Space Academy (Main Campus)', code: 'TES-MAIN-01', type: 'Headquarters / Main', status: 'OPERATIONAL', city: 'Islamabad, Pakistan' }
+                      { id: 'b-1', name: 'The Education Space Academy (Main Campus)', code: 'TES-MAIN-01', type: 'Headquarters / Main', status: 'OPERATIONAL', city: 'Qasimabad, Hyderabad, Sindh' }
                     ]).map((branch) => {
                       const isMain = branch.code === 'TES-MAIN-01' || branch.status === 'OPERATIONAL' && branch.id === 'b-1';
                       return (

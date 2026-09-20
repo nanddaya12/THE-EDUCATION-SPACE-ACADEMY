@@ -81,7 +81,7 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
                 THE EDUCATION SPACE
               </div>
               <div className="text-[9px] font-bold text-slate-300 tracking-widest uppercase block mt-0.5">
-                ACADEMY <span className="text-slate-500 font-normal">|</span> <span className="text-slate-400 font-normal lowercase tracking-normal">Excellence in STEM & Humanities</span>
+                TES ACADEMY <span className="text-[#e05626]">QASIMABAD</span> <span className="text-slate-500 font-normal">|</span> <span className="text-slate-300 font-normal">HYDERABAD</span>
               </div>
             </div>
           </button>
@@ -116,6 +116,16 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
 
           {/* Header Right Actions */}
           <div className="hidden sm:flex items-center gap-3">
+            {/* Quick Call Helpline */}
+            <a
+              href="tel:03332613913"
+              className="hidden xl:flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-white transition-colors bg-white/5 border border-white/10 px-3 py-1.5 rounded"
+              title="Direct Helpline"
+            >
+              <Phone className="w-3 h-3 text-[#e05626]" />
+              <span>0333 2613913</span>
+            </a>
+
             {isAuthenticated && user ? (
               <button
                 onClick={() => setCurrentView(getDashboardView(user.role))}
@@ -203,22 +213,28 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
                 <LogoEmblem className="w-full h-full object-contain" />
               </div>
               <span className="font-sans font-black text-xs text-white tracking-wider uppercase block">
-                THE EDUCATION SPACE <br /><span className="text-[10px] text-slate-400 font-normal">ACADEMY</span>
+                THE EDUCATION SPACE <br /><span className="text-[10px] text-[#e05626] font-bold">TES ACADEMY QASIMABAD</span>
               </span>
             </div>
             <p className="text-[11px] text-slate-400 leading-relaxed">
-              Excellence in STEM & Humanities. Preparing ambitious students for leadership in a changing world.
+              Hyderabad's premier education center & library. Specializing in NUST preparation, Intermediate (XI & XII), and Secondary coaching.
             </p>
+            <div className="flex items-center gap-2 pt-1 text-[11px] text-amber-400 font-bold">
+              <span>★★★★★</span>
+              <span className="text-white">5.0</span>
+              <span className="text-slate-400 font-normal">(3 Google Reviews)</span>
+            </div>
           </div>
 
           {/* Academics Col */}
           <div>
-            <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">Academics</span>
+            <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">Programs</span>
             <ul className="space-y-2 text-[11px] text-slate-400">
-              <li><button onClick={() => handleNavClick('academics')} className="hover:text-white">STEM & Robotics</button></li>
-              <li><button onClick={() => handleNavClick('academics')} className="hover:text-white">Humanities & Arts</button></li>
-              <li><button onClick={() => handleNavClick('academics')} className="hover:text-white">Academic Programs</button></li>
-              <li><button onClick={() => handleNavClick('faculty-staff')} className="hover:text-white">Faculty Directory</button></li>
+              <li><button onClick={() => handleNavClick('academics')} className="hover:text-white">NUST Entry Test Prep</button></li>
+              <li><button onClick={() => handleNavClick('academics')} className="hover:text-white">Class XI Coaching (Pre-Med/Eng)</button></li>
+              <li><button onClick={() => handleNavClick('academics')} className="hover:text-white">Class XII Coaching (Pre-Med/Eng)</button></li>
+              <li><button onClick={() => handleNavClick('academics')} className="hover:text-white">Class IX & X Matric/O-Level</button></li>
+              <li><button onClick={() => handleNavClick('academics')} className="hover:text-white">Academy Study Library</button></li>
             </ul>
           </div>
 
@@ -226,21 +242,41 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
           <div>
             <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">Admissions</span>
             <ul className="space-y-2 text-[11px] text-slate-400">
-              <li><button onClick={() => handleNavClick('apply-online')} className="hover:text-white text-[#e05626]">Apply Online</button></li>
+              <li><button onClick={() => handleNavClick('apply-online')} className="hover:text-white text-[#e05626] font-bold">Admission Open</button></li>
               <li><button onClick={() => handleNavClick('admissions-info')} className="hover:text-white">Admissions Process</button></li>
-              <li><button onClick={() => handleNavClick('fee-structure')} className="hover:text-white">Fees & Financial Aid</button></li>
+              <li><button onClick={() => handleNavClick('fee-structure')} className="hover:text-white">Fees & Installments</button></li>
               <li><button onClick={() => handleNavClick('fee-structure')} className="hover:text-white">Scholarships</button></li>
             </ul>
           </div>
 
           {/* Campus Life Col */}
           <div>
-            <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">Campus Life</span>
+            <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">Campus & Social</span>
             <ul className="space-y-2 text-[11px] text-slate-400">
-              <li><button onClick={() => handleNavClick('news')} className="hover:text-white">Student Life</button></li>
-              <li><button onClick={() => handleNavClick('news')} className="hover:text-white">Clubs & Activities</button></li>
-              <li><button onClick={() => handleNavClick('academics')} className="hover:text-white">Campus Facilities</button></li>
-              <li><button onClick={() => handleNavClick('careers')} className="hover:text-white">Career Opportunities</button></li>
+              <li><button onClick={() => handleNavClick('news')} className="hover:text-white">News & Events</button></li>
+              <li>
+                <a 
+                  href="https://www.facebook.com/p/The-TES-academy-Qasimabad-Hyderabad-61560745738373/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-white inline-flex items-center gap-1"
+                >
+                  <span>Facebook Page (420+)</span>
+                  <ExternalLink className="w-2.5 h-2.5 text-[#e05626]" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.facebook.com/groups/326792183341444/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-white inline-flex items-center gap-1"
+                >
+                  <span>Facebook Group (2.3K+)</span>
+                  <ExternalLink className="w-2.5 h-2.5 text-[#e05626]" />
+                </a>
+              </li>
+              <li><button onClick={() => handleNavClick('careers')} className="hover:text-white">Faculty Careers</button></li>
             </ul>
           </div>
 
@@ -249,19 +285,43 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
             <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">About</span>
             <ul className="space-y-2 text-[11px] text-slate-400">
               <li><button onClick={() => handleNavClick('about')} className="hover:text-white">Our Mission</button></li>
-              <li><button onClick={() => handleNavClick('faculty-staff')} className="hover:text-white">Our Team</button></li>
-              <li><button onClick={() => handleNavClick('principal-message')} className="hover:text-white">Principal's Address</button></li>
-              <li><button onClick={() => handleNavClick('news')} className="hover:text-white">News & Updates</button></li>
+              <li><button onClick={() => handleNavClick('faculty-staff')} className="hover:text-white">Faculty Mentors</button></li>
+              <li><button onClick={() => handleNavClick('principal-message')} className="hover:text-white">Director's Message</button></li>
+              <li><button onClick={() => handleNavClick('downloads')} className="hover:text-white">Prospectus & Syllabi</button></li>
             </ul>
           </div>
 
           {/* Contact Col */}
           <div>
-            <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">Contact</span>
+            <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">Contact & Visit</span>
             <ul className="space-y-2.5 text-[11px] text-slate-400">
-              <li className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5 text-[#e05626]" /> +92 51 111 222 333</li>
-              <li className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-[#e05626]" /> admissions@education-space.edu</li>
-              <li className="flex items-start gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#e05626] shrink-0 mt-0.5" /> Islamabad, Pakistan</li>
+              <li>
+                <a href="tel:03332613913" className="flex items-center gap-1.5 text-white hover:text-[#e05626] font-bold">
+                  <Phone className="w-3.5 h-3.5 text-[#e05626]" />
+                  <span>0333 2613913</span>
+                </a>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-[#e05626]" />
+                <span>Opens 6:30 AM (Mon - Sat)</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-[#e05626] shrink-0 mt-0.5" />
+                <span>
+                  Above Soneri Bank, GMB Colony, Main Road Nasim Nagar to Ali Palace, Qasimabad, Hyderabad
+                </span>
+              </li>
+              <li className="pt-1">
+                <a 
+                  href="https://maps.google.com/?q=The+Education+Space+Academy+Qasimabad+Hyderabad" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[#e05626] hover:underline text-[10px] font-bold flex items-center gap-1"
+                >
+                  <span>Google Maps: 98WP+R53</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>

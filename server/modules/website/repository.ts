@@ -55,12 +55,12 @@ const memoryCmsItems: CmsItem[] = [
 
 const memoryContactInquiries: any[] = [];
 let memoryWebsiteSettings = {
-  institutionName: 'The Education Space Academy',
-  campusAddress: 'Plot 45, Sector H-8/4, Education Complex, Islamabad, Pakistan',
-  phone: '+92 51 111 222 333',
-  email: 'info@educationspace.edu',
-  workingHours: 'Monday - Saturday: 08:00 AM - 04:00 PM',
-  coordinates: { lat: 33.6844, lng: 73.0479 }
+  institutionName: 'TES Academy Qasimabad / The Education Space Academy',
+  campusAddress: 'Above Soneri Bank, GMB Colony, Main Road Nasim Nagar to Ali Palace, Qasimabad, Hyderabad 71000, Sindh, Pakistan',
+  phone: '0333 2613913',
+  email: 'info@tesacademy.edu.pk',
+  workingHours: 'Opens 6:30 AM | Monday - Saturday: 06:30 AM - 09:30 PM',
+  coordinates: { lat: 25.4055, lng: 68.3341 }
 };
 
 export class WebsiteRepository {

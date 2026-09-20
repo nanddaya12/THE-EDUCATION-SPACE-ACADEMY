@@ -83,51 +83,58 @@ let memoryHomepageConfig: HomepageConfig = {
     status: 'PUBLISHED'
   },
   statistics: [
-    { count: '2,400+', label: 'Enrolled Students', sortOrder: 1 },
-    { count: '99.4%', label: 'A-Level Pass Rate', sortOrder: 2 },
-    { count: '45+', label: 'STEM & VEX Gold Medals', sortOrder: 3 },
-    { count: '100%', label: 'University Placement', sortOrder: 4 }
+    { count: '2,500+', label: 'Scholars Mentored', sortOrder: 1 },
+    { count: '5.0 ★', label: 'Google Rating (3 Reviews)', sortOrder: 2 },
+    { count: '100%', label: 'NUST / Entry Test Success', sortOrder: 3 },
+    { count: 'XI & XII', label: 'Top Coaching Batches', sortOrder: 4 }
   ],
   featuredPrograms: [
     {
       id: 'prog-1',
-      title: 'A-Level Pre-Engineering & AI Robotics',
-      level: 'Higher Secondary (Grade 11-12)',
-      description: 'Advanced Cambridge A-Levels integrated with hands-on supercomputing lab coursework.',
+      title: 'NUST Entry Test Preparation (NET)',
+      level: 'University Entry Test Coaching',
+      description: 'Comprehensive preparation for NUST (NET Series), ECAT, MDCAT, and top engineering & medical entrance exams.',
       imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600'
     },
     {
       id: 'prog-2',
-      title: 'Cambridge O-Level Secondary Stream',
-      level: 'Secondary (Grade 9-10)',
-      description: 'Comprehensive secondary education emphasizing analytical reasoning and scientific inquiry.',
+      title: 'Intermediate Coaching (XI & XII)',
+      level: 'Higher Secondary (Classes XI & XII)',
+      description: 'Mastery coaching in Pre-Engineering, Pre-Medical, and ICS Computer Science for Sindh and Federal Boards.',
       imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600'
+    },
+    {
+      id: 'prog-3',
+      title: 'Secondary Coaching (IX - X) & Study Library',
+      level: 'Secondary & Library',
+      description: 'Secondary board curriculum preparation supported by our quiet, air-conditioned academy study library.',
+      imageUrl: 'https://images.unsplash.com/photo-1532012164546-f432f2e37271?w=600'
     }
   ],
   upcomingEvents: [
     {
       id: 'evt-1',
-      title: 'Annual STEM & Robotics Exhibition 2026',
-      eventDate: '2026-09-15T09:00:00.000Z',
-      location: 'Main Auditorium, Islamabad',
+      title: 'NUST NET Orientation & Entry Test Workshop',
+      eventDate: '2026-09-25T06:30:00.000Z',
+      location: 'TES Academy Main Campus, Qasimabad, Hyderabad',
       imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600',
       status: 'PUBLISHED'
     }
   ],
   callToAction: {
-    title: 'Admissions Open for Session 2026-2027',
-    subtitle: 'Secure your place in Pakistan’s premier academic and AI supercomputing academy.',
-    primaryButtonText: 'Submit Online Application',
-    primaryButtonLink: 'apply-online',
-    secondaryButtonText: 'Download Prospectus',
-    secondaryButtonLink: 'downloads',
+    title: 'Admissions Open at TES Academy Qasimabad',
+    subtitle: 'Best Academy for Nust Preparation and XI, XII Coaching. Call 0333 2613913 to reserve your seat.',
+    primaryButtonText: 'Call 0333 2613913',
+    primaryButtonLink: 'contact',
+    secondaryButtonText: 'Apply Online',
+    secondaryButtonLink: 'apply-online',
     status: 'PUBLISHED'
   },
   contactSummary: {
-    institutionName: 'The Education Space Academy',
-    address: 'Plot 45, Sector H-8/4, Education Complex, Islamabad, Pakistan',
-    phone: '+92 51 111 222 333',
-    email: 'admissions@educationspace.edu'
+    institutionName: 'TES Academy Qasimabad Hyderabad',
+    address: 'Above Soneri Bank, GMB Colony, Main Road Nasim Nagar to Ali Palace, Qasimabad, Hyderabad 71000, Sindh, Pakistan',
+    phone: '0333 2613913',
+    email: 'info@tesacademy.edu.pk'
   }
 };
 

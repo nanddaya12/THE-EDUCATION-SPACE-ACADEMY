@@ -291,11 +291,11 @@ export const PublicWebsite = () => {
 
   // Dynamic public configuration fallback helpers
   const heroCfg = publicSiteConfig?.hero || {
-    tagline: 'The Education Space Academy',
+    tagline: 'TES Academy Qasimabad • Hyderabad',
     mainTitle: 'Empowering Minds.',
     accentTitle: 'Shaping Tomorrow.',
-    description: 'A forward-thinking academic community where STEM, humanities, leadership and innovation come together to prepare students for a changing world.',
-    primaryCtaText: 'Apply for Admission',
+    description: 'Premier coaching center in Qasimabad, Hyderabad specializing in NUST Entry Test Preparation (NET), Intermediate XI & XII coaching, secondary science, and a quiet dedicated study library.',
+    primaryCtaText: 'Admission Open: 0333 2613913',
     primaryCtaLink: 'apply-online',
     secondaryCtaText: 'Explore Academics',
     secondaryCtaLink: 'academics',
@@ -304,16 +304,16 @@ export const PublicWebsite = () => {
 
   const annCfg = publicSiteConfig?.announcement;
   const statsCfg = publicSiteConfig?.stats || {
-    enrolledStudents: '14,200+',
-    expertFaculty: '120+',
-    acceptanceRate: '98.4%',
-    campusesCount: '1 Main Campus'
+    enrolledStudents: '2,500+',
+    expertFaculty: '35+',
+    acceptanceRate: '5.0 ★ Google',
+    campusesCount: 'Qasimabad, Hyderabad'
   };
   const contactCfg = publicSiteConfig?.contact || {
-    campusName: 'The Education Space Academy (Main Campus)',
-    address: 'The Education Space Academy, Main Campus, Pakistan',
-    phone: '+92 (51) 892-4100',
-    email: 'admissions@educationspace.edu'
+    campusName: 'TES Academy Qasimabad Hyderabad',
+    address: 'Above Soneri Bank, GMB Colony, Main Road Nasim Nagar to Ali Palace, Qasimabad, Hyderabad, Sindh 71000',
+    phone: '0333 2613913',
+    email: 'info@tesacademy.edu.pk'
   };
 
   // Careers State
@@ -555,19 +555,39 @@ export const PublicWebsite = () => {
                 {/* Bottom Sub-info on Hero */}
                 <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-8 pb-8 w-full border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-slate-300 text-xs font-normal">
                   <div>
-                    <div className="text-white/90 font-medium">Secondary & Higher Secondary Education</div>
-                    <div className="text-slate-400 text-[11px] mt-0.5">Islamabad • Pakistan</div>
+                    <div className="text-white/90 font-medium">NUST Prep • Classes XI & XII Coaching • Study Library</div>
+                    <div className="text-slate-400 text-[11px] mt-0.5">Nasim Nagar, Qasimabad, Hyderabad • Sindh 71000</div>
                   </div>
 
-                  <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-white font-bold">{statsCfg.enrolledStudents || '14,200+'}</span>
-                    <span className="text-slate-400 text-[11px]">Enrolled Students</span>
+                  <div className="flex items-center gap-3">
+                    <a 
+                      href="https://www.google.com/search?q=the+education+space+academy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 rounded-lg hover:bg-amber-500/20 transition-colors"
+                      title="5.0 Rating on Google Reviews"
+                    >
+                      <div className="flex text-amber-400 text-xs">★★★★★</div>
+                      <span className="text-white font-bold">5.0</span>
+                      <span className="text-slate-300 text-[11px]">(3 Google Reviews)</span>
+                    </a>
+
+                    <div className="hidden md:flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-white font-bold">{statsCfg.enrolledStudents || '2,500+'}</span>
+                      <span className="text-slate-400 text-[11px]">Scholars Mentored</span>
+                    </div>
                   </div>
 
                   <div className="sm:text-right">
-                    <div className="text-white/90 font-medium">{contactCfg.campusName || 'The Education Space Academy (Main Campus)'}</div>
-                    <div className="text-slate-400 text-[11px] mt-0.5">Central Campus • Multi-Campus Ready</div>
+                    <a 
+                      href="tel:03332613913" 
+                      className="inline-flex items-center gap-1.5 text-white/95 font-bold hover:text-amber-400 transition-colors bg-white/10 px-3 py-1.5 rounded border border-white/15"
+                    >
+                      <Phone className="w-3.5 h-3.5 text-[#e05626]" />
+                      <span>0333 2613913</span>
+                    </a>
+                    <div className="text-slate-400 text-[11px] mt-1">Opens 6:30 AM (Monday - Saturday)</div>
                   </div>
                 </div>
               </section>
@@ -710,50 +730,88 @@ export const PublicWebsite = () => {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Card 1: Secondary STEM */}
-                    <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm flex flex-col">
+                  <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-5">
+                    {/* Card 1: NUST Prep */}
+                    <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow">
                       <img 
                         src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" 
-                        alt="Secondary STEM Robotics and Physics" 
-                        className="w-full h-44 object-cover"
+                        alt="NUST Entry Test Preparation" 
+                        className="w-full h-40 object-cover"
                       />
-                      <div className="p-6 space-y-3 flex-1">
-                        <div className="text-[#e05626] text-[10px] font-bold uppercase tracking-wider">
-                          GRADES 9 - 10
+                      <div className="p-5 space-y-2.5 flex-1 flex flex-col justify-between">
+                        <div>
+                          <div className="text-[#e05626] text-[10px] font-bold uppercase tracking-wider">
+                            UNIVERSITY ADMISSIONS
+                          </div>
+                          <h3 className="font-serif text-base font-bold text-slate-900 mt-1">
+                            NUST Prep (NET) & Entry Tests
+                          </h3>
+                          <ul className="space-y-1.5 text-xs text-slate-600 pt-2">
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> NET (Series 1, 2, 3 & 4)</li>
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> ECAT & MDCAT Prep</li>
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> FAST, GIKI & PIEAS Tests</li>
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Intensive Past Paper Drills</li>
+                          </ul>
                         </div>
-                        <h3 className="font-serif text-lg font-bold text-slate-900">
-                          Secondary STEM
-                        </h3>
-                        <ul className="space-y-1.5 text-xs text-slate-600 pt-1">
-                          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Robotics</li>
-                          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Physics</li>
-                          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Chemistry</li>
-                          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Advanced Mathematics</li>
-                        </ul>
+                        <div className="pt-3 border-t border-slate-100">
+                          <span className="text-[11px] font-bold text-[#e05626]">Rated #1 for NUST Prep in Hyderabad</span>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Card 2: Higher Secondary Humanities & Arts */}
-                    <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm flex flex-col">
+                    {/* Card 2: Intermediate Coaching */}
+                    <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                      <img 
+                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=80" 
+                        alt="XI & XII Intermediate Coaching" 
+                        className="w-full h-40 object-cover"
+                      />
+                      <div className="p-5 space-y-2.5 flex-1 flex flex-col justify-between">
+                        <div>
+                          <div className="text-[#e05626] text-[10px] font-bold uppercase tracking-wider">
+                            CLASSES XI & XII
+                          </div>
+                          <h3 className="font-serif text-base font-bold text-slate-900 mt-1">
+                            Intermediate Coaching Wing
+                          </h3>
+                          <ul className="space-y-1.5 text-xs text-slate-600 pt-2">
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Pre-Engineering Stream</li>
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Pre-Medical Stream</li>
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> ICS (Computer Science)</li>
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Sindh & Federal Board Exams</li>
+                          </ul>
+                        </div>
+                        <div className="pt-3 border-t border-slate-100">
+                          <span className="text-[11px] font-bold text-slate-700">Top Board Position Preparation</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card 3: Secondary & Study Library */}
+                    <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow">
                       <img 
                         src="https://images.unsplash.com/photo-1532012164546-f432f2e37271?w=600&auto=format&fit=crop&q=80" 
-                        alt="Higher Secondary Humanities & Arts" 
-                        className="w-full h-44 object-cover"
+                        alt="Secondary Science and Study Library" 
+                        className="w-full h-40 object-cover"
                       />
-                      <div className="p-6 space-y-3 flex-1">
-                        <div className="text-[#e05626] text-[10px] font-bold uppercase tracking-wider">
-                          GRADES 11 - 12
+                      <div className="p-5 space-y-2.5 flex-1 flex flex-col justify-between">
+                        <div>
+                          <div className="text-[#e05626] text-[10px] font-bold uppercase tracking-wider">
+                            CLASSES IX - X & LIBRARY
+                          </div>
+                          <h3 className="font-serif text-base font-bold text-slate-900 mt-1">
+                            Secondary & Study Library
+                          </h3>
+                          <ul className="space-y-1.5 text-xs text-slate-600 pt-2">
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Class 9th & 10th Science</li>
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Dedicated Study Library</li>
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Air-Conditioned Study Hall</li>
+                            <li className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Comprehensive Book Bank</li>
+                          </ul>
                         </div>
-                        <h3 className="font-serif text-lg font-bold text-slate-900">
-                          Higher Secondary Humanities & Arts
-                        </h3>
-                        <ul className="space-y-1.5 text-xs text-slate-600 pt-1">
-                          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Literature</li>
-                          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Economics</li>
-                          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Global Politics</li>
-                          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#e05626]" /> Digital Media</li>
-                        </ul>
+                        <div className="pt-3 border-t border-slate-100">
+                          <span className="text-[11px] font-bold text-emerald-700">Open 6:30 AM Daily</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -997,45 +1055,88 @@ export const PublicWebsite = () => {
               {/* SECTION 8: CAMPUS FACILITIES & QUICK CONTACT */}
               <section className="bg-[#fcfcfd] py-14 border-t border-slate-200">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-6">
-                  <h3 className="font-serif text-xl font-bold text-slate-900">
-                    A Campus Designed for Learning.
-                  </h3>
+                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                      <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
+                        <MapPin className="w-3.5 h-3.5" />
+                        <span>CAMPUS LOCATION & RATINGS</span>
+                      </div>
+                      <h3 className="font-serif text-2xl md:text-3xl font-bold text-slate-900 mt-1">
+                        Visit TES Academy Qasimabad
+                      </h3>
+                      <p className="text-slate-600 text-xs md:text-sm mt-0.5">
+                        Nasim Nagar to Ali Palace Main Road, Above Soneri Bank, Qasimabad, Hyderabad.
+                      </p>
+                    </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    {/* Google Reviews Badge */}
+                    <a 
+                      href="https://www.google.com/search?q=the+education+space+academy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white border border-slate-200 shadow-sm hover:shadow-md px-4 py-2 rounded flex items-center gap-3 transition-shadow"
+                    >
+                      <div className="text-center">
+                        <div className="text-amber-500 text-sm font-black leading-none">5.0 ★</div>
+                        <span className="text-[10px] text-slate-500 font-medium">3 Reviews</span>
+                      </div>
+                      <div className="border-l border-slate-200 pl-3">
+                        <div className="text-xs font-bold text-slate-800">Google Verified Rating</div>
+                        <div className="text-[11px] text-[#e05626] italic font-medium">"Best Academy for NUST & XI-XII Coaching"</div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-2">
                     {/* Col 1: Campus photo */}
                     <div className="md:col-span-4">
-                      <div className="overflow-hidden rounded-sm border border-slate-200 shadow-sm">
+                      <div className="overflow-hidden rounded-sm border border-slate-200 shadow-sm relative group">
                         <img 
                           src="https://images.unsplash.com/photo-1562774053-701939374585?w=700&auto=format&fit=crop&q=80" 
-                          alt="A Campus Designed for Learning" 
-                          className="w-full h-44 object-cover"
+                          alt="TES Academy Qasimabad Campus" 
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
+                        <div className="absolute bottom-2 left-2 bg-[#0b1c30]/90 text-white text-[10px] font-bold px-2.5 py-1 rounded">
+                          Air-Conditioned Study Library & Classrooms
+                        </div>
                       </div>
                     </div>
 
                     {/* Col 2: Contact Details */}
-                    <div className="md:col-span-4 space-y-3 text-xs text-slate-600">
-                      <div className="flex items-center gap-3">
-                        <MapPin className="w-4 h-4 text-[#e05626] shrink-0" />
-                        <span>Islamabad, Pakistan</span>
+                    <div className="md:col-span-4 space-y-3.5 text-xs text-slate-600">
+                      <div className="flex items-start gap-3">
+                        <MapPin className="w-4 h-4 text-[#e05626] shrink-0 mt-0.5" />
+                        <div>
+                          <strong className="text-slate-800">TES Academy Qasimabad</strong>
+                          <p className="text-slate-600 text-[11px] mt-0.5">
+                            Above Soneri Bank, GMB Colony, Main Road Nasim Nagar to Ali Palace, Qasimabad, Hyderabad, Sindh 71000
+                          </p>
+                        </div>
                       </div>
+
                       <div className="flex items-center gap-3">
                         <Phone className="w-4 h-4 text-[#e05626] shrink-0" />
-                        <span>+92 51 111 222 333</span>
+                        <a href="tel:03332613913" className="font-bold text-slate-900 hover:text-[#e05626] transition-colors">
+                          0333 2613913 (Direct Admission Helpline)
+                        </a>
                       </div>
+
                       <div className="flex items-center gap-3">
                         <Mail className="w-4 h-4 text-[#e05626] shrink-0" />
-                        <span>admissions@education-space.edu</span>
+                        <span>info@tesacademy.edu.pk</span>
                       </div>
+
                       <div className="flex items-center gap-3">
                         <Clock className="w-4 h-4 text-[#e05626] shrink-0" />
-                        <span>Mon - Fri: 8:00 AM - 4:00 PM</span>
+                        <span className="font-medium text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
+                          Opens 6:30 AM (Monday - Saturday)
+                        </span>
                       </div>
                     </div>
 
-                    {/* Col 3: Styled Map graphic with Islamabad Campus pin */}
+                    {/* Col 3: Styled Map graphic with Qasimabad Campus pin & Directions */}
                     <div className="md:col-span-4">
-                      <div className="relative h-44 rounded-sm border border-slate-200 overflow-hidden bg-[#eaf1e9] flex items-center justify-center p-4">
+                      <div className="relative h-48 rounded-sm border border-slate-200 overflow-hidden bg-[#eaf1e9] flex flex-col items-center justify-center p-4 text-center">
                         {/* Stylized vector map grid background */}
                         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:16px_16px]" />
                         <svg className="absolute inset-0 w-full h-full text-slate-300 opacity-60" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1045,10 +1146,26 @@ export const PublicWebsite = () => {
                         </svg>
 
                         {/* Campus Location Pin */}
-                        <div className="relative z-10 bg-white/95 backdrop-blur-sm border border-slate-300 px-3.5 py-1.5 rounded shadow-md flex items-center gap-2 text-xs font-bold text-slate-800">
-                          <MapPin className="w-4 h-4 text-[#e05626] fill-[#e05626]" />
-                          <span>Islamabad Campus</span>
+                        <div className="relative z-10 bg-white/95 backdrop-blur-sm border border-slate-300 px-3 py-2 rounded shadow-md space-y-1">
+                          <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-slate-900">
+                            <MapPin className="w-4 h-4 text-[#e05626] fill-[#e05626]" />
+                            <span>TES Academy Qasimabad</span>
+                          </div>
+                          <div className="text-[10px] text-slate-500 font-mono">
+                            Plus Code: 98WP+R53
+                          </div>
                         </div>
+
+                        {/* Direct Google Maps Directions link */}
+                        <a 
+                          href="https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiw6aiPhf6WAxUAAAAAHQAAAAAQFg..i&fvr=1&pvq=Cg0vZy8xMXk3N19tbTF0IiEKG3RoZSBlZHVjYXRpb24gc3BhY2UgYWNhZGVteRACGAOJAcSd13y9o4tF&lqi=Cht0aGUgZWR1Y2F0aW9uIHNwYWNlIGFjYWRlbXlIuZjn_5y9gIAIWicQABABEAIQAxgDIht0aGUgZWR1Y2F0aW9uIHNwYWNlIGFjYWRlbXmSARBlZHVjYXRpb25fY2VudGVymgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5pYm5acFRHeEJSUkFC-gEECAAQNg&cs=0&um=1&ie=UTF-8&fb=1&gl=pk&sa=X&ftid=0x394c71000978da21:0x458ba3bd7cd79dc4"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative z-10 mt-3 inline-flex items-center gap-1.5 bg-[#e05626] hover:bg-[#c9461b] text-white text-[11px] font-bold px-3.5 py-1.5 rounded shadow-sm transition-colors"
+                        >
+                          <span>Get Google Maps Directions</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1602,27 +1719,101 @@ export const PublicWebsite = () => {
                 </div>
 
                 <div className="lg:col-span-5 space-y-6">
-                  <div className="bg-[#f8f9fa] p-6 border border-slate-200 rounded-sm space-y-4">
-                    <h4 className="font-serif font-bold text-base text-slate-900">Campus Contact Details</h4>
-                    <div className="space-y-3 text-xs text-slate-600">
+                  <div className="bg-[#f8f9fa] p-6 border border-slate-200 rounded-sm space-y-5">
+                    <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+                      <h4 className="font-serif font-bold text-base text-slate-900">TES Academy Qasimabad</h4>
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Opens 6:30 AM</span>
+                    </div>
+
+                    <div className="space-y-3.5 text-xs text-slate-600">
                       <div className="flex items-start gap-3">
                         <MapPin className="w-4 h-4 text-[#e05626] shrink-0 mt-0.5" />
                         <div>
-                          <strong>Islamabad Main Campus</strong>
-                          <p>The Education Space Academy, Sector H-8 / H-9, Islamabad, Pakistan</p>
+                          <strong className="text-slate-900">Main Campus & Study Library</strong>
+                          <p className="text-slate-600 text-[11px] mt-0.5">
+                            Above Soneri Bank, GMB Colony, Main Road Nasim Nagar to Ali Palace, Qasimabad, Hyderabad 71000, Sindh, Pakistan
+                          </p>
+                          <span className="inline-block mt-1 font-mono text-[10px] text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
+                            Plus Code: 98WP+R53
+                          </span>
                         </div>
                       </div>
+
                       <div className="flex items-center gap-3">
                         <Phone className="w-4 h-4 text-[#e05626] shrink-0" />
-                        <span>+92 51 111 222 333 / +92 51 444 555 666</span>
+                        <a href="tel:03332613913" className="font-bold text-slate-900 hover:text-[#e05626] transition-colors">
+                          0333 2613913 (Direct Calls / WhatsApp)
+                        </a>
                       </div>
+
                       <div className="flex items-center gap-3">
                         <Mail className="w-4 h-4 text-[#e05626] shrink-0" />
-                        <span>admissions@education-space.edu</span>
+                        <span>info@tesacademy.edu.pk</span>
                       </div>
+
                       <div className="flex items-center gap-3">
                         <Clock className="w-4 h-4 text-[#e05626] shrink-0" />
-                        <span>Monday - Friday: 8:00 AM - 4:00 PM</span>
+                        <span>Monday - Saturday: 6:30 AM - 9:30 PM</span>
+                      </div>
+                    </div>
+
+                    {/* Google Reviews Box */}
+                    <div className="bg-white border border-slate-200 p-4 rounded-sm space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold text-sm text-slate-900">5.0</span>
+                          <div className="flex text-amber-500 text-xs">★★★★★</div>
+                          <span className="text-[11px] text-slate-500 font-medium">(3 Google Reviews)</span>
+                        </div>
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Verified</span>
+                      </div>
+                      <blockquote className="text-[11px] italic text-slate-700 bg-orange-50/50 p-2 rounded border-l-2 border-[#e05626]">
+                        "Best Academy for Nust Preparation and XI, XII Coaching"
+                      </blockquote>
+                      <div className="pt-1 flex items-center justify-between text-[11px]">
+                        <a 
+                          href="https://www.google.com/search?q=the+education+space+academy" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-[#e05626] hover:underline font-bold inline-flex items-center gap-1"
+                        >
+                          <span>Rate & Review on Google</span>
+                          <ExternalLink className="w-2.5 h-2.5" />
+                        </a>
+                        <a 
+                          href="https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiw6aiPhf6WAxUAAAAAHQAAAAAQFg..i&fvr=1&pvq=Cg0vZy8xMXk3N19tbTF0IiEKG3RoZSBlZHVjYXRpb24gc3BhY2UgYWNhZGVteRACGAOJAcSd13y9o4tF&lqi=Cht0aGUgZWR1Y2F0aW9uIHNwYWNlIGFjYWRlbXlIuZjn_5y9gIAIWicQABABEAIQAxgDIht0aGUgZWR1Y2F0aW9uIHNwYWNlIGFjYWRlbXmSARBlZHVjYXRpb25fY2VudGVymgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5pYm5acFRHeEJSUkFC-gEECAAQNg&cs=0&um=1&ie=UTF-8&fb=1&gl=pk&sa=X&ftid=0x394c71000978da21:0x458ba3bd7cd79dc4" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-slate-700 hover:text-[#e05626] font-bold inline-flex items-center gap-1"
+                        >
+                          <span>Directions</span>
+                          <ExternalLink className="w-2.5 h-2.5" />
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Social Communities */}
+                    <div className="space-y-2 pt-1 border-t border-slate-200">
+                      <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Social Communities</div>
+                      <div className="grid grid-cols-2 gap-2 text-xs">
+                        <a 
+                          href="https://www.facebook.com/p/The-TES-academy-Qasimabad-Hyderabad-61560745738373/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white border border-slate-200 hover:border-[#e05626] p-2 rounded text-center transition-colors block"
+                        >
+                          <div className="font-bold text-slate-900">Facebook Page</div>
+                          <div className="text-[10px] text-slate-500">420+ Followers</div>
+                        </a>
+                        <a 
+                          href="https://www.facebook.com/groups/326792183341444/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white border border-slate-200 hover:border-[#e05626] p-2 rounded text-center transition-colors block"
+                        >
+                          <div className="font-bold text-slate-900">Official Group</div>
+                          <div className="text-[10px] text-slate-500">2.3K+ Members</div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1667,7 +1858,7 @@ export const PublicWebsite = () => {
                     At The Education Space Academy, we bridge the rigor of STEM exploration with the depth of the humanities. Our students learn to design algorithms, analyze scientific data, read world literature, and debate constitutional ethics—all in an inclusive, respectful environment.
                   </p>
                   <p>
-                    I warmly invite you to visit our Islamabad campus, tour our robotics laboratories and lecture halls, and experience first-hand the energy of our scholars.
+                    I warmly invite you to visit our Qasimabad Hyderabad academy, tour our modern lecture rooms, library, and laboratory facilities, and experience first-hand the energy of our scholars.
                   </p>
 
                   <div className="pt-4">
@@ -1739,7 +1930,7 @@ export const PublicWebsite = () => {
                   { q: 'What curricula are offered at The Education Space Academy?', a: 'We provide Cambridge International (IGCSE, O-Level, A-Level) as well as the Federal National Board curriculum for both Secondary and Higher Secondary grades.' },
                   { q: 'What are the admission deadlines for Fall 2026?', a: 'Regular registration closes on July 31, 2026. Early scholarship candidates must complete their test before June 15, 2026.' },
                   { q: 'Are merit scholarships available for high-achieving students?', a: 'Yes. We offer 25% to 100% merit-based tuition waivers based on previous board exam scores and our internal diagnostic test.' },
-                  { q: 'What transportation facilities does the academy offer?', a: 'Air-conditioned dedicated vans cover all major sectors of Islamabad and Rawalpindi with real-time GPS fleet tracking for parents.' }
+                  { q: 'What transportation facilities does the academy offer?', a: 'Dedicated transportation vans cover all major sectors of Qasimabad, Latifabad, Nasim Nagar, and central Hyderabad with safe, punctual pick-and-drop services.' }
                 ].map((faq, idx) => (
                   <div key={idx} className="bg-white border border-slate-200 rounded-sm p-5 space-y-2 shadow-sm">
                     <h4 className="font-serif font-bold text-slate-900 text-sm">{faq.q}</h4>

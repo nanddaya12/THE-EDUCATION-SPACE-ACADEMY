@@ -97,7 +97,7 @@ export const SiteProfilesManager = () => {
   const [activeSessions, setActiveSessions] = useState([
     { id: 'sess-1', user: user?.name || 'Administrator', email: user?.email || 'admin@tes.edu', role: user?.role || 'SUPER_ADMIN', ip: '192.168.1.104', location: 'TES Main Campus (Administrative Suite)', device: 'Desktop - Chrome on Windows 11', lastActive: 'Just now', isCurrent: true },
     { id: 'sess-2', user: 'Dr. Sarah Jenkins', email: 'sarah.jenkins@tes.edu', role: 'TEACHER', ip: '10.0.4.15', location: 'Science Lab 2', device: 'Tablet - iPad Safari', lastActive: '12 mins ago', isCurrent: false },
-    { id: 'sess-3', user: 'Robert Rivera', email: 'robert.rivera@gmail.com', role: 'PARENT', ip: '203.135.44.82', location: 'Islamabad, PK', device: 'Mobile - TES iOS App', lastActive: '45 mins ago', isCurrent: false },
+    { id: 'sess-3', user: 'Robert Rivera', email: 'robert.rivera@gmail.com', role: 'PARENT', ip: '203.135.44.82', location: 'Hyderabad, PK', device: 'Mobile - TES iOS App', lastActive: '45 mins ago', isCurrent: false },
     { id: 'sess-4', user: 'Alex Rivera', email: 'alex.rivera@edu.com', role: 'STUDENT', ip: '10.0.8.91', location: 'Campus Wi-Fi (Library Zone)', device: 'Laptop - Chrome on MacOS', lastActive: '2 hours ago', isCurrent: false }
   ]);
 

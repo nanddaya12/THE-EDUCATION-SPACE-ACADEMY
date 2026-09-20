@@ -149,7 +149,7 @@ export const StudentMasterProfile = ({ student, onClose, onEdit }) => {
                 <div className="flex justify-between"><span className="text-slate-500">Primary Guardian:</span> <strong>{student.guardianName || 'Robert Rivera'}</strong></div>
                 <div className="flex justify-between"><span className="text-slate-500">Relationship:</span> <strong>Father</strong></div>
                 <div className="flex justify-between"><span className="text-slate-500">Guardian Phone:</span> <strong className="font-mono">{student.guardianPhone || '+92 301 9991122'}</strong></div>
-                <div className="flex justify-between"><span className="text-slate-500">Residential Address:</span> <strong>Sector F-7/2, Islamabad</strong></div>
+                <div className="flex justify-between"><span className="text-slate-500">Residential Address:</span> <strong>Nasim Nagar, Qasimabad, Hyderabad</strong></div>
                 <div className="flex justify-between"><span className="text-slate-500">Emergency Contact:</span> <strong className="text-emerald-700 font-bold">Authorized</strong></div>
               </div>
             </div>

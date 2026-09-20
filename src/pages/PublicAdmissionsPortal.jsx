@@ -32,7 +32,7 @@ export const PublicAdmissionsPortal = () => {
     email: '',
     phone: '',
     gender: 'Male',
-    program: 'Full-Stack Web Development',
+    program: 'NUST Entry Test Preparation (NET)',
     guardianName: '',
     guardianPhone: '',
     fileName: ''
@@ -249,9 +249,13 @@ export const PublicAdmissionsPortal = () => {
                   value={formData.program}
                   onChange={(e) => setFormData({ ...formData, program: e.target.value })}
                   options={[
-                    { value: 'Full-Stack Web Development', label: 'Full-Stack Web Dev' },
-                    { value: 'AI & Data Science Engineering', label: 'AI & Data Science' },
-                    { value: 'UX/UI Product Design', label: 'UX/UI Product Design' }
+                    { value: 'NUST Entry Test Preparation (NET)', label: 'NUST Entry Test Prep (NET)' },
+                    { value: 'Class XI & XII Pre-Engineering', label: 'Class XI & XII Pre-Engineering' },
+                    { value: 'Class XI & XII Pre-Medical', label: 'Class XI & XII Pre-Medical' },
+                    { value: 'Class XI & XII ICS (Computer Science)', label: 'Class XI & XII ICS (Computer Science)' },
+                    { value: 'Class IX & X Secondary Science', label: 'Class IX & X Secondary Science' },
+                    { value: 'Academy Study Library Membership', label: 'Academy Study Library Membership' },
+                    { value: 'AI & Data Science Engineering', label: 'AI & Data Science' }
                   ]}
                 />
               </div>

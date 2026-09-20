@@ -81,7 +81,7 @@ const memoryVacancies: JobVacancy[] = [
     ],
     deadline: '2026-09-30T00:00:00.000Z',
     employmentType: 'FULL_TIME',
-    location: 'Main Campus, Islamabad',
+    location: 'TES Academy, Qasimabad, Hyderabad',
     status: 'PUBLISHED',
     createdAt: new Date('2026-08-01'),
     updatedAt: new Date('2026-08-01')
@@ -97,7 +97,7 @@ const memoryVacancies: JobVacancy[] = [
     ],
     deadline: '2026-10-15T00:00:00.000Z',
     employmentType: 'FULL_TIME',
-    location: 'Main Campus, Islamabad',
+    location: 'TES Academy, Qasimabad, Hyderabad',
     status: 'PUBLISHED',
     createdAt: new Date('2026-08-10'),
     updatedAt: new Date('2026-08-10')
@@ -302,7 +302,7 @@ export class ContactCareersRepository {
       requirements: data.requirements || [],
       deadline: data.deadline || new Date(Date.now() + 30 * 86400000).toISOString(),
       employmentType: data.employmentType || 'FULL_TIME',
-      location: data.location || 'Main Campus, Islamabad',
+      location: data.location || 'TES Academy, Qasimabad, Hyderabad',
       status: data.status || 'DRAFT',
       createdAt: new Date(),
       updatedAt: new Date()

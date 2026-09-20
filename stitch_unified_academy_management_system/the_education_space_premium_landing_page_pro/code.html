@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Education Space - Empowering Your Future</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#d66b3d",
+                    "on-secondary-fixed-variant": "#474746",
+                    "surface-container-low": "#f4f6fa",
+                    "inverse-surface": "#1e293b",
+                    "on-surface-variant": "#4b5563",
+                    "secondary": "#64748b",
+                    "surface-container-high": "#e2e8f0",
+                    "surface-dim": "#cbd5e1",
+                    "secondary-fixed-dim": "#94a3b8",
+                    "inverse-on-surface": "#f1f5f9",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e2e8f0",
+                    "on-surface": "#0f172a",
+                    "on-tertiary-container": "#f8fafc",
+                    "surface-bright": "#f8fafc",
+                    "on-secondary-container": "#475569",
+                    "primary-fixed": "#ffed4a",
+                    "outline": "#cbd5e1",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#cbd5e1",
+                    "surface-variant": "#f1f5f9",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#7f1d1d",
+                    "outline-variant": "#e2e8f0",
+                    "primary-container": "#fbd38d",
+                    "surface-container": "#f1f5f9",
+                    "tertiary-fixed-dim": "#94a3b8",
+                    "on-tertiary-fixed": "#0f172a",
+                    "tertiary-container": "#cbd5e1",
+                    "primary-fixed-dim": "#f6e05e",
+                    "inverse-primary": "#f6e05e",
+                    "tertiary": "#475569",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ef4444",
+                    "primary": "#d66b3d",
+                    "on-background": "#0f172a",
+                    "on-secondary-fixed": "#1e293b",
+                    "on-tertiary-fixed-variant": "#334155",
+                    "secondary-container": "#e2e8f0",
+                    "surface": "#ffffff",
+                    "background": "#fafafa",
+                    "on-error-container": "#7f1d1d",
+                    "tertiary-fixed": "#e2e8f0",
+                    "on-primary-container": "#1a202c",
+                    "error-container": "#fecaca",
+                    "on-primary-fixed-variant": "#991b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.375rem",
+                    "lg": "0.75rem",
+                    "xl": "1.5rem",
+                    "full": "9999px",
+                    "2xl": "2rem"
+            },
+            "spacing": {
+                    "margin-mobile": "24px",
+                    "stack-lg": "48px",
+                    "sidebar-width": "280px",
+                    "container-max": "1280px",
+                    "stack-sm": "12px",
+                    "gutter": "32px",
+                    "margin-desktop": "64px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk", "sans-serif"
+                    ],
+                    "body-md": [
+                            "Inter", "sans-serif"
+                    ],
+                    "label-sm": [
+                            "Inter", "sans-serif"
+                    ],
+                    "code-sm": [
+                            "jetbrainsMono"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk", "sans-serif"
+                    ],
+                    "body-lg": [
+                            "Inter", "sans-serif"
+                    ],
+                    "title-md": [
+                            "Hanken Grotesk", "sans-serif"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk", "sans-serif"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "600",
+                                    "letterSpacing": "-0.01em"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "code-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.03em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "300"
+                            }
+                    ],
+                    "title-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600",
+                                    "letterSpacing": "-0.01em"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "600",
+                                    "letterSpacing": "-0.02em"
+                            }
+                    ]
+            },
+            boxShadow: {
+              'soft': '0 10px 40px -10px rgba(0,0,0,0.05)',
+              'float': '0 20px 50px -20px rgba(0,0,0,0.1)',
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        /* Custom Styles for interactions */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-accent {
+            background: linear-gradient(135deg, #d66b3d 0%, #fbd38d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .smooth-transition {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary/20 selection:text-primary overflow-x-hidden">
+<!-- TopNavBar Component -->
+<header class="bg-surface/80 backdrop-blur-md w-full top-0 fixed border-b border-outline-variant/50 z-50 transition-all duration-300 shadow-sm">
+<div class="flex justify-between items-center h-[88px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<div class="flex items-center gap-3 group cursor-pointer">
+<img alt="The Education Space Logo" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAo8BMgrOnWMS1vJJNeDoaeVGe0oHT5KevUMO3IW4bx4D-Qz5SzQq2_aA1DJR2OutgSeG80XLqxIBYrEZ8UVTRFSX4MAoiqQH5LTggYQ-hROgDn_MZoF8r4wPYcQJt-hHo7WLUkQCoPa5ySehXesd3jyzvh3b-PhCpojyrx_BmmEpb_PFHHbMiP8hoC7mYeMN5bLQ80ZyzbIADhO4n0QjgkUu1THjmrKlJ_nSzTjCNsA2wElfp7GAmV6YcCZFEYXKoqw"/>
+</div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-primary font-label-sm uppercase tracking-wider font-semibold relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-primary after:rounded-full" href="#">Courses</a>
+<a class="text-on-surface-variant font-label-sm uppercase tracking-wider hover:text-primary smooth-transition" href="#">About Us</a>
+<a class="text-on-surface-variant font-label-sm uppercase tracking-wider hover:text-primary smooth-transition" href="#">Mission</a>
+<a class="text-on-surface-variant font-label-sm uppercase tracking-wider hover:text-primary smooth-transition" href="#">Testimonials</a>
+</nav>
+<!-- Actions -->
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface font-label-sm uppercase tracking-wider hover:text-primary smooth-transition" href="#">Login</a>
+<button class="bg-primary text-white font-label-sm uppercase tracking-wider px-8 py-3.5 rounded-full hover:bg-surface-tint shadow-soft hover:shadow-float smooth-transition hover-lift flex items-center gap-2">
+<span>Enroll Now</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface p-2 rounded-full hover:bg-surface-container smooth-transition">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="w-full pt-[88px]">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-background">
+<!-- Abstract Background Elements -->
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+<div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4"></div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-6 flex flex-col items-start gap-8 z-20">
+<div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-outline-variant/60 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest text-xs">Curated Learning Paths</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[72px] md:leading-[80px] text-on-surface tracking-tight">
+            Master the <br/>
+<span class="relative inline-block">
+<span class="relative z-10 text-on-surface">Future of</span>
+<svg class="absolute -bottom-4 left-0 w-full h-6 text-primary/20 -z-0" preserveaspectratio="none" viewbox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+</span><br/>
+<span class="text-primary">Work.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
+            Elevate your career with bespoke, industry-led education designed for ambitious professionals. Rigorous, relevant, and crafted for impact.
+        </p>
+<div class="flex flex-col sm:flex-row gap-5 mt-4 w-full sm:w-auto">
+<button class="bg-on-surface text-white font-label-sm uppercase tracking-wider px-10 py-4 rounded-full hover:bg-primary shadow-soft hover:shadow-float smooth-transition hover-lift group flex items-center justify-center gap-3">
+                Explore Programs
+                <span class="material-symbols-outlined text-sm group-hover:translate-x-1 smooth-transition">arrow_forward</span>
+</button>
+<button class="bg-white text-on-surface border border-outline-variant font-label-sm uppercase tracking-wider px-10 py-4 rounded-full hover:bg-surface-container-low shadow-sm smooth-transition flex items-center justify-center gap-2">
+                View Curriculum
+            </button>
+</div>
+<div class="mt-8 flex items-center gap-6 pt-8 border-t border-outline-variant/50 w-full max-w-md">
+<div class="flex -space-x-4">
+<img alt="Student" class="w-12 h-12 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIv4W9OrQlllbBVYhwPLEmxvG8owKWjqZ-lqq6dOTomav5qN4OLTxgDEV8qmFejGqP1098YC1cCNDFe3xd4nqXdjuNrQ7VHRuk72b6fVPAU6H6IrsXOUdsV89g8A6Dpg_jNuZ-laz70kHmULkq5l2D0IP9DiImMWmRHx--ekybPg7YImPCsLYHJMSuZeM53qIKvRf5U_VUjhdROM4T-Ay-cLeOEoDZT5SafxQcq0Ebazgw-x78OcPu"/>
+<img alt="Student" class="w-12 h-12 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIrdev50UwayJwCxCp47L_Q_3dC52xKKkUFHTydEz0T-FUBrfNBYfrYJrtQ3s2l2Wl7qFpeCpGgjTyO-BY-WFev24ZV2Wy1QnThAbh6nxkSDdhnPz0PnT52OoOmon-a0zy5s03SQyo7mxq1TepfYk3QMdywlPkdp5o28ZU6qIVc_dVo_9zWcaSJpKxI5Lg-rc2jjELzVmrNMbBk78-gGoNCmKjrRKirSLbD81MozYWiXtbEJIUdJX5"/>
+<img alt="Student" class="w-12 h-12 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLAy9RYD0knsHVrsJ_i4DJ--SGDBiWwwBGrWSAi4ZDVZ6bp9ZHDzCjz0xJqHa6uuCP0pe2y5pelYvdARlek9A_keaDqqh10uvYKQNEBQ7qjjVKiyQF1xJ0TGv91H1NaZUec3xUQ-7CuJKq-o8AUtMseAwxuJlhZuTY00Q95izStS4L8eLnbxJ0i2AqzZ4xzaKUgMY9wM2C8-hG6M3dXYfGLJY-e_64Z_0dnEgQqhdtlqWiPlVR0Bks"/>
+<div class="w-12 h-12 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-xs font-semibold text-on-surface">+10k</div>
+</div>
+<div class="text-sm font-medium text-on-surface-variant leading-snug">
+                Join our thriving <br/> global community.
+            </div>
+</div>
+</div>
+<div class="lg:col-span-6 relative z-10 h-full hidden lg:block">
+<div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-float">
+<img alt="Students collaborating" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD_9UhsnyfetDDbCrxgwBURaTJF-HXJu8I0j_qMLw6gjRM81Fl8NzEAGORpGzGn9LKiBnI7wM4SAhIlFgt2RF8sOvEWFkgfmBufXOIYcZIc4bU9XLcTtfzfT0sr6BUPmkrB1kZV13bQLeGYPNWWDlEyoWfQA0vhcUSu4VMMwl6dJrlsKTyHiqSu05nnsl7ttILpRILWPhgt51Dqbr4YJB0IdkDhcAUV8PRrOF6qwrUFsE8uu8MIDPD"/>
+<!-- Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<!-- Floating glass card -->
+<div class="absolute bottom-8 left-8 right-8 glass-card p-6 rounded-xl flex items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">trophy</span>
+</div>
+<div>
+<div class="font-title-md text-lg text-on-surface mb-1">Top Tier Instruction</div>
+<div class="font-body-md text-sm text-on-surface-variant">Learn from experts at Fortune 500 companies.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Pillar Section -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+<!-- Feature 1 -->
+<div class="flex flex-col gap-6 group">
+<div class="w-16 h-16 rounded-2xl bg-surface border border-outline-variant shadow-sm flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-white group-hover:border-primary smooth-transition -rotate-3 group-hover:rotate-0">
+<span class="material-symbols-outlined text-3xl font-light">architecture</span>
+</div>
+<h3 class="font-title-md text-2xl text-on-surface">Structured Clarity</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Our curriculum is meticulously designed to cut through the noise, providing a clear, linear path to mastery in complex subjects.</p>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col gap-6 group md:translate-y-8">
+<div class="w-16 h-16 rounded-2xl bg-surface border border-outline-variant shadow-sm flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-white group-hover:border-primary smooth-transition rotate-3 group-hover:rotate-0">
+<span class="material-symbols-outlined text-3xl font-light">sync_alt</span>
+</div>
+<h3 class="font-title-md text-2xl text-on-surface">Adaptive Pacing</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Learn seamlessly. Our platform adapts to your professional schedule, allowing deep dives when you have time and micro-learning when you don't.</p>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col gap-6 group md:translate-y-16">
+<div class="w-16 h-16 rounded-2xl bg-surface border border-outline-variant shadow-sm flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-white group-hover:border-primary smooth-transition -rotate-3 group-hover:rotate-0">
+<span class="material-symbols-outlined text-3xl font-light">verified</span>
+</div>
+<h3 class="font-title-md text-2xl text-on-surface">Verified Impact</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Earn credentials that carry weight. We partner with industry leaders to ensure your skills translate directly to career advancement.</p>
+</div>
+</div>
+</section>
+<!-- Mission Section (Asymmetrical layout) -->
+<section class="py-32 relative overflow-hidden bg-surface-container-low">
+<!-- Decorative background -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-white rounded-r-[100px] z-0"></div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-20">
+<div class="lg:w-5/12 flex flex-col gap-8">
+<span class="font-label-sm text-primary uppercase tracking-widest font-semibold flex items-center gap-2">
+<span class="w-8 h-px bg-primary"></span>
+    Our Philosophy
+</span>
+<h2 class="font-headline-lg text-[48px] leading-[56px] text-on-surface tracking-tight">
+    Crafting the <br/> architects of <br/> tomorrow.
+</h2>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+    At The Education Space, we believe that profound knowledge requires an elegant environment. We strip away the superficial to focus entirely on deep, substantive learning.
+</p>
+<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="border-l-2 border-primary/30 pl-6">
+<div class="font-display-lg text-4xl text-on-surface mb-2">94%</div>
+<div class="font-label-sm text-on-surface-variant uppercase tracking-wider text-xs">Career Advancement</div>
+</div>
+<div class="border-l-2 border-primary/30 pl-6">
+<div class="font-display-lg text-4xl text-on-surface mb-2">50+</div>
+<div class="font-label-sm text-on-surface-variant uppercase tracking-wider text-xs">Enterprise Partners</div>
+</div>
+</div>
+</div>
+<div class="lg:w-7/12 relative">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-float group">
+<img alt="Professional workshop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAikA5Cwwaa9jCz1qXJBh4tPPDKvyrwer-gjQWUn8ayFvVnWqEX2iiE9vperzsqklvAdL0N5HtIKBkZEDRk9JDOGke7-MPW4RWY0zjzboxb1tjXRKOrfMTkj3uAd-u5vmGj6sgkL19OE8l8s4i7Ip1mMbAgfAa0E-4VdBJpV1lQgWt1RBGMmDEeU_9sibXE1ABbfiLzYhkRy3v5IlR9_6xhtwcXOIPi0EbDuKrQjNAiNGpvaPVWrMIt"/>
+<div class="absolute inset-0 bg-on-surface/10 group-hover:bg-transparent smooth-transition"></div>
+</div>
+<!-- Floating stat box -->
+<div class="absolute -bottom-10 -left-10 bg-white p-8 rounded-2xl shadow-float max-w-xs hidden md:block">
+<div class="flex gap-1 text-primary mb-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic mb-4">"The structural clarity of their programs completely transformed my approach to complex data modeling."</p>
+<div class="font-label-sm text-on-surface uppercase tracking-wider text-xs font-semibold">— Sarah J., Lead Analyst</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Courses (Bespoke Grid) -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-16 flex flex-col md:flex-row justify-between items-end gap-8 border-b border-outline-variant/60 pb-8">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Curated Programs</h2>
+<p class="font-body-lg text-on-surface-variant">Discover our meticulously designed learning paths, crafted for immediate industry application.</p>
+</div>
+<a class="text-on-surface font-label-sm uppercase tracking-wider hover:text-primary flex items-center gap-2 group smooth-transition" href="#">
+                    View Full Catalog 
+                    <span class="material-symbols-outlined text-lg group-hover:translate-x-2 smooth-transition">trending_flat</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+<!-- Course Card 1 (Large, Premium) -->
+<a class="md:col-span-8 group block relative rounded-2xl overflow-hidden bg-surface border border-outline-variant/50 shadow-soft hover:shadow-float smooth-transition h-[500px]" href="#">
+<div class="absolute inset-0 bg-surface-container-high">
+<img alt="Data Science" class="w-full h-full object-cover opacity-80 group-hover:scale-105 smooth-transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe0lHQun1AmP75cbkNTRWJkTNx4COseYPHtNXNUvuBKyxM2m7uEb3ac5QSYa40CHo1T8k1E3elQLXaj4G7uZvIYeMDCBc9k_V5KToq3XbD9OOvQDdCSQTiW38qPZDEBCtbrw3LFZFTdQosMgTq4g8MBeqHLHbfbhIU0fF3iAq9yWH2gSrXEDO93N3UrW_RabVz-xAOjVrlZXhRBBylBWPSQI1SycFpDBGKEJnFC7orjoARtuFA0n1e"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/40 to-transparent"></div>
+<div class="absolute inset-0 p-10 flex flex-col justify-end z-10">
+<div class="flex items-center gap-4 mb-6">
+<span class="px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white font-label-sm text-xs border border-white/30 uppercase tracking-widest">Data &amp; Analytics</span>
+<span class="text-white/80 font-label-sm text-xs flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 12 Weeks</span>
+</div>
+<h3 class="font-headline-lg text-4xl text-white mb-4 leading-tight group-hover:text-primary-container smooth-transition">Advanced Data Modeling &amp; Machine Learning</h3>
+<div class="flex items-center gap-2 text-white/90 font-body-md opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 smooth-transition delay-100">
+            View Program Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</a>
+<!-- Course Card 2 (Tall) -->
+<a class="md:col-span-4 group block relative rounded-2xl overflow-hidden bg-surface border border-outline-variant/50 shadow-soft hover:shadow-float smooth-transition h-[500px] flex flex-col" href="#">
+<div class="h-[250px] relative overflow-hidden bg-surface-container">
+<img alt="Design" class="w-full h-full object-cover opacity-90 group-hover:scale-105 smooth-transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu3aSpwtOHlxXTDP__qp1MCkFqNrfmO9nWYpTb4jMNtHNKJcKSZNJUdPZJ6sNhIROvhIluAdmkHsSlyNWhX-tQCzNZrGCsNJaGyICMkJk4eMZz67qPUu4DacylV-t0yiooEAaCPECJ2gH1DvlQyReBjFC9sU4Sns7ZhI6ByWAYbww8lil8A375YYqeDfFj5S5KsY3-MCo2z9VwO8e1SxmpRF1tW5GMUWxG7UuLtslACfQxb5tjqCu2"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<span class="text-primary font-label-sm text-xs uppercase tracking-widest mb-4 block">Design Systems</span>
+<h3 class="font-title-md text-2xl text-on-surface mb-4 leading-snug group-hover:text-primary smooth-transition">Strategic UX &amp; Interface Design</h3>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-3 mb-6">Master the art of scalable design systems and user-centric problem solving for enterprise applications.</p>
+<div class="mt-auto flex items-center justify-between border-t border-outline-variant/50 pt-6">
+<span class="font-title-md text-lg text-on-surface">$850</span>
+<span class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-white smooth-transition">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+</div>
+</a>
+<!-- Promotional Block (Elegant) -->
+<div class="md:col-span-12 rounded-2xl bg-on-surface text-white p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden mt-8 shadow-float">
+<!-- Abstract texture -->
+<div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+<div class="relative z-10 max-w-2xl">
+<h3 class="font-display-lg text-4xl md:text-5xl mb-6">Elevate your entire organization.</h3>
+<p class="font-body-lg text-secondary-fixed-dim mb-10 font-light">
+            Bespoke corporate training solutions designed to align perfectly with your strategic objectives and accelerate team capability.
+        </p>
+<button class="bg-primary text-white font-label-sm uppercase tracking-wider px-10 py-4 rounded-full hover:bg-white hover:text-on-surface shadow-soft smooth-transition hover-lift">
+            Discuss Enterprise Solutions
+        </button>
+</div>
+<div class="relative z-10 hidden lg:block">
+<div class="w-48 h-48 rounded-full border border-white/20 flex items-center justify-center p-4">
+<div class="w-full h-full rounded-full border border-white/40 flex items-center justify-center p-4">
+<div class="w-full h-full rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-6xl font-light">corporate_fare</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section (Refined) -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop relative">
+<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+<h2 class="font-display-lg text-5xl md:text-6xl text-on-surface mb-8 tracking-tight">Begin your masterclass.</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mb-12 font-light">
+    Join a select cohort of professionals dedicated to mastering their craft. Applications for the next term are now open.
+</p>
+<div class="flex flex-col sm:flex-row gap-6 w-full justify-center">
+<button class="bg-primary text-white font-label-sm uppercase tracking-wider px-12 py-5 rounded-full hover:bg-on-surface shadow-float smooth-transition hover-lift group flex items-center justify-center gap-3">
+    Apply Now
+    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 smooth-transition">arrow_forward</span>
+</button>
+<button class="bg-transparent text-on-surface border-2 border-on-surface font-label-sm uppercase tracking-wider px-12 py-5 rounded-full hover:bg-surface-container-low smooth-transition flex items-center justify-center">
+    Speak with an Advisor
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component (Minimal & Professional) -->
+<footer class="bg-on-surface w-full py-24 border-t border-white/10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col gap-8 col-span-1 md:col-span-5 pr-8">
+<div class="flex items-center gap-3">
+<!-- Re-using the requested logo in the footer as well, adapted for dark background by CSS filter if needed, though original image might have white background. Using text as fallback/companion for professional look -->
+<span class="font-display-lg text-2xl text-white tracking-tight">The Education Space.</span>
+</div>
+<p class="font-body-md text-secondary-fixed-dim leading-relaxed">
+        Crafting the architects of tomorrow through structured clarity, rigorous curriculum, and bespoke digital learning environments.
+    </p>
+<div class="flex gap-4 mt-4">
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white smooth-transition" href="#">
+<span class="material-symbols-outlined text-sm">language</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white smooth-transition" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+</div>
+</div>
+<!-- Links Column -->
+<div class="col-span-1 md:col-span-4 grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm uppercase tracking-widest text-white/50 mb-4 text-xs font-semibold">Programs</h4>
+<a class="font-body-md text-white/80 hover:text-primary smooth-transition" href="#">Data Science</a>
+<a class="font-body-md text-white/80 hover:text-primary smooth-transition" href="#">UX/UI Design</a>
+<a class="font-body-md text-white/80 hover:text-primary smooth-transition" href="#">Product Management</a>
+<a class="font-body-md text-white/80 hover:text-primary smooth-transition" href="#">Enterprise</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm uppercase tracking-widest text-white/50 mb-4 text-xs font-semibold">Institution</h4>
+<a class="font-body-md text-white/80 hover:text-primary smooth-transition" href="#">About Us</a>
+<a class="font-body-md text-white/80 hover:text-primary smooth-transition" href="#">Admissions</a>
+<a class="font-body-md text-white/80 hover:text-primary smooth-transition" href="#">Faculty</a>
+<a class="font-body-md text-white/80 hover:text-primary smooth-transition" href="#">Contact</a>
+</div>
+</div>
+<!-- Newsletter -->
+<div class="col-span-1 md:col-span-3 flex flex-col gap-6">
+<h4 class="font-label-sm uppercase tracking-widest text-white/50 text-xs font-semibold">Insights</h4>
+<p class="font-body-md text-secondary-fixed-dim text-sm">Subscribe to our journal for industry insights and program updates.</p>
+<div class="flex flex-col gap-3">
+<input class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-md smooth-transition" placeholder="Email address" type="email"/>
+<button class="bg-white text-on-surface font-label-sm uppercase tracking-wider px-4 py-3 rounded-lg hover:bg-primary hover:text-white smooth-transition">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="font-body-md text-white/40 text-sm">
+        © 2024 The Education Space. All rights reserved.
+    </p>
+<div class="flex gap-6">
+<a class="font-body-md text-white/40 text-sm hover:text-white smooth-transition" href="#">Privacy Policy</a>
+<a class="font-body-md text-white/40 text-sm hover:text-white smooth-transition" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

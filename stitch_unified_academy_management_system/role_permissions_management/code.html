@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background dark:bg-background antialiased" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Role Management - The Education Space</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "inverse-primary": "#ffb598",
+                        "secondary-container": "#e2dfde",
+                        "tertiary-fixed": "#e1e3e4",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary-fixed": "#191c1d",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-low": "#eff4ff",
+                        "outline": "#897269",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary": "#5a5c5d",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-container": "#fcfdfe",
+                        "primary-container": "#bb572b",
+                        "outline-variant": "#ddc1b7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#636262",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#ffdbce",
+                        "primary-fixed-dim": "#ffb598",
+                        "on-surface-variant": "#56423b",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-tint": "#9f4216",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "tertiary-container": "#737576",
+                        "secondary": "#5f5e5e",
+                        "primary": "#9b3f14",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#370e00",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed-dim": "#c5c7c8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sidebar-width": "260px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "container-max": "1440px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "title-md": ["Inter"],
+                        "code-sm": ["jetbrainsMono"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "code-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="h-full flex text-on-surface">
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden w-full top-0 sticky bg-surface dark:bg-surface-dim font-body-md text-body-md border-b border-outline-variant dark:border-outline z-40 flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto w-full z-40">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-inverse-primary cursor-pointer active:opacity-80">
+            The Education Space
+        </div>
+<div class="flex items-center gap-stack-sm text-primary dark:text-primary-fixed-dim">
+<button class="hover:text-primary-container transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:text-primary-container transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full py-stack-lg fixed left-0 top-0 h-full w-sidebar-width bg-on-secondary-fixed dark:bg-on-surface text-primary dark:text-primary-fixed font-body-md text-body-md z-40">
+<div class="px-4 mb-stack-lg flex items-center gap-stack-sm cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="The Education Space Logo" class="w-10 h-10 rounded-full object-cover border border-on-secondary-fixed-variant" data-alt="A minimalist logo for 'The Education Space' featuring an abstract geometric shape in stark white on a very dark charcoal background, evoking clarity, structure, and professional educational management. High contrast, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCykQxUKakBUWVZws3tlpwLX1M4AZhN1I86odTbU4VNVB4EXlCaT0cYBHFxmVSTbo7jqs9X6O0EIKQbLzfEyfKJx-ZfnqkKcFjk-R9i20c4XOMMBnKWoFMejIP6nW52JGuA6Zm1SThE9U_uDwiWX_Pre8QohiOAW-JipwjgBh7Q4NoiK-HmO0hyL7GzwKFO_nFnc4upNEJc7jyQFW2Nn4_M4Yl-qSnPh0IXc0egrvBbIZZxkLpazcug"/>
+<div>
+<div class="font-title-md text-title-md text-white">Edu Admin</div>
+<div class="text-secondary-fixed-dim font-label-sm text-label-sm">Management Portal</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto scrollbar-hide px-2 flex flex-col gap-1">
+<a class="text-secondary-fixed-dim px-4 py-3 flex items-center gap-3 hover:bg-secondary dark:hover:bg-tertiary-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform duration-200 group-hover:scale-110" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-secondary-fixed-dim px-4 py-3 flex items-center gap-3 hover:bg-secondary dark:hover:bg-tertiary-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform duration-200 group-hover:scale-110" data-icon="event_available">event_available</span>
+                Attendance
+            </a>
+<a class="text-secondary-fixed-dim px-4 py-3 flex items-center gap-3 hover:bg-secondary dark:hover:bg-tertiary-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform duration-200 group-hover:scale-110" data-icon="library_books">library_books</span>
+                Course CMS
+            </a>
+<a class="text-white bg-primary-container border-l-4 border-primary px-4 py-3 flex items-center gap-3 hover:bg-secondary dark:hover:bg-tertiary-container transition-all rounded-lg rounded-l-none group" href="#">
+<span class="material-symbols-outlined transition-transform duration-200 group-hover:scale-110" data-icon="badge">badge</span>
+                Role Management
+            </a>
+<a class="text-secondary-fixed-dim px-4 py-3 flex items-center gap-3 hover:bg-secondary dark:hover:bg-tertiary-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform duration-200 group-hover:scale-110" data-icon="analytics">analytics</span>
+                Analytics
+            </a>
+<a class="text-secondary-fixed-dim px-4 py-3 flex items-center gap-3 hover:bg-secondary dark:hover:bg-tertiary-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform duration-200 group-hover:scale-110" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+<div class="px-4 mt-auto">
+<button class="w-full bg-[#D66B3D] text-white py-3 rounded-lg font-body-md text-body-md font-semibold hover:bg-primary transition-colors flex justify-center items-center gap-2 mb-stack-md shadow-sm">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Create New Course
+            </button>
+<div class="border-t border-on-secondary-fixed-variant pt-4 flex flex-col gap-1">
+<a class="text-secondary-fixed-dim px-4 py-3 flex items-center gap-3 hover:bg-secondary dark:hover:bg-tertiary-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform duration-200 group-hover:scale-110" data-icon="help">help</span>
+                    Support
+                </a>
+<a class="text-secondary-fixed-dim px-4 py-3 flex items-center gap-3 hover:bg-secondary dark:hover:bg-tertiary-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform duration-200 group-hover:scale-110" data-icon="logout">logout</span>
+                    Logout
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full md:ml-sidebar-width flex flex-col bg-background min-h-screen">
+<!-- Page Header -->
+<div class="px-margin-mobile md:px-margin-desktop py-stack-lg border-b border-outline-variant bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row md:items-center justify-between gap-stack-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Role Security &amp; Management</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">Manage user access levels, permissions, and security policies across the institutional platform.</p>
+</div>
+<div class="flex items-center gap-stack-sm">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all w-full md:w-64" placeholder="Search users or roles..." type="text"/>
+</div>
+<button class="bg-[#D66B3D] text-white px-4 py-2 rounded-lg font-body-md text-body-md font-semibold hover:bg-primary transition-colors flex items-center gap-2 whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                        Add New User
+                    </button>
+</div>
+</div>
+</div>
+<div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex-1 flex flex-col gap-stack-lg">
+<!-- Security Overview Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="font-title-md text-title-md text-on-surface">Total Users</div>
+<div class="p-2 bg-surface-container rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">2,451</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-green-600 text-[16px]" data-icon="arrow_upward">arrow_upward</span>
+<span class="text-green-600">12%</span> vs last month
+                        </div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="font-title-md text-title-md text-on-surface">Active Admins</div>
+<div class="p-2 bg-surface-container rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">18</div>
+<div class="text-error font-label-sm text-label-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="warning">warning</span>
+                            3 require MFA setup
+                        </div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="font-title-md text-title-md text-on-surface">Recent Security Logs</div>
+<div class="p-2 bg-surface-container rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant">
+<span class="truncate">Failed login attempt (IP: 192.168...)</span>
+<span class="text-label-sm font-label-sm">2m ago</span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant">
+<span class="truncate">Role changed for J. Smith</span>
+<span class="text-label-sm font-label-sm">1h ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- User Management Table Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="p-4 border-b border-outline-variant bg-surface-bright flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface">User Directory</span>
+<span class="bg-surface-container-high text-on-surface px-2 py-0.5 rounded-full text-label-sm font-label-sm">Filtered</span>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto">
+<select class="bg-surface border border-outline-variant rounded-lg px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/10">
+<option value="all">All Roles</option>
+<option value="admin">Administrator</option>
+<option value="teacher">Teacher</option>
+<option value="student">Student</option>
+<option value="parent">Parent</option>
+</select>
+<button class="p-2 border border-outline-variant rounded-lg text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8F9FA] border-b border-outline-variant text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="p-4 font-medium w-12">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</th>
+<th class="p-4 font-medium">User Details</th>
+<th class="p-4 font-medium">Current Role</th>
+<th class="p-4 font-medium hidden md:table-cell">Last Active</th>
+<th class="p-4 font-medium hidden lg:table-cell">Status</th>
+<th class="p-4 font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant font-body-md text-body-md text-on-surface">
+<tr class="hover:bg-[#F1F5F9] transition-colors group">
+<td class="p-4">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a middle-aged woman with glasses, dark hair, wearing a white blouse, smiling slightly against a plain grey studio background. Corporate lighting, clear focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-9iNiWfxs-R8LY9LhkDUPemumT87LLLm-Y3p6xtUIcCk-pEARxR7lV_Hon3hrZPeFtl7NR-RtixdDsGOQFbwMWwgqWhHHlHY2RD639xYoPYAQ7QRawtcErGXdiEUa0yzA4Od60ffncRcBc2nuWUkIT2Xxt_GegQBtl8ly-UQW3DIIsu2pLVioTtdjK_GAZNGU2N8_z8JaYp1IF8OFtacVQ736C53LlwqjLY8cys3g4WB6NeSVymb5"/>
+</div>
+<div>
+<div class="font-medium">Dr. Sarah Jenkins</div>
+<div class="text-on-surface-variant text-sm">s.jenkins@eduspace.edu</div>
+</div>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<span class="bg-[#e2dfde] text-[#191c1d] px-3 py-1 rounded-full text-label-sm font-label-sm inline-flex items-center gap-1 border border-[#c8c6c5]">
+<span class="material-symbols-outlined text-[14px]" data-icon="shield_person">shield_person</span>
+                                            Administrator
+                                        </span>
+</div>
+</td>
+<td class="p-4 hidden md:table-cell text-on-surface-variant">Today, 09:41 AM</td>
+<td class="p-4 hidden lg:table-cell">
+<span class="bg-green-100 text-green-800 px-2 py-1 rounded-md text-xs font-medium border border-green-200">Active</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Edit Permissions">
+<span class="material-symbols-outlined" data-icon="edit_square">edit_square</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-[#F1F5F9] transition-colors group">
+<td class="p-4">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold overflow-hidden border border-outline-variant">
+                                            MC
+                                        </div>
+<div>
+<div class="font-medium">Michael Chen</div>
+<div class="text-on-surface-variant text-sm">m.chen@eduspace.edu</div>
+</div>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<span class="bg-surface-variant text-on-surface px-3 py-1 rounded-full text-label-sm font-label-sm inline-flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="school">school</span>
+                                            Teacher
+                                        </span>
+</div>
+</td>
+<td class="p-4 hidden md:table-cell text-on-surface-variant">Yesterday, 14:30 PM</td>
+<td class="p-4 hidden lg:table-cell">
+<span class="bg-green-100 text-green-800 px-2 py-1 rounded-md text-xs font-medium border border-green-200">Active</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Edit Permissions">
+<span class="material-symbols-outlined" data-icon="edit_square">edit_square</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-[#F1F5F9] transition-colors group">
+<td class="p-4">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Headshot of a young male student, early 20s, wearing a casual grey hoodie, looking off-camera slightly. Natural daylight, bright academic setting, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG7Asp_pxrwEpD1UD3yvIgnJtYyX_9ddi69lFnDlnKImWqdYsa8smSrQ4TRedijrkcoG_znwGGz08ve3xzAtYrA3rRwDSGSG8vD09BVYIopPhwzQJckzocllM4nEosO1m3h9t65otNuJewzjF2aNGxKlFEZvsa0piHkL8JUpZ9nhMjLCi3aMBMmUkDvYxAOiB-0LaUWLQceamwBYMrFLh3Eal3SBJp-ABN4-Nx0qzSK0yfQ3_v7QHd"/>
+</div>
+<div>
+<div class="font-medium">Alex Rivera</div>
+<div class="text-on-surface-variant text-sm">arivera.24@student.edu</div>
+</div>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<span class="bg-surface-bright text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm inline-flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="face">face</span>
+                                            Student
+                                        </span>
+</div>
+</td>
+<td class="p-4 hidden md:table-cell text-on-surface-variant">Oct 12, 08:15 AM</td>
+<td class="p-4 hidden lg:table-cell">
+<span class="bg-orange-100 text-primary px-2 py-1 rounded-md text-xs font-medium border border-orange-200">Pending Review</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Edit Permissions">
+<span class="material-symbols-outlined" data-icon="edit_square">edit_square</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-outline-variant flex justify-between items-center text-body-md font-body-md text-on-surface-variant bg-[#F8F9FA]">
+<div>Showing 1 to 3 of 2,451 entries</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant rounded-md hover:bg-surface-variant transition-colors disabled:opacity-50" disabled="">Previous</button>
+<button class="px-3 py-1 border border-outline-variant rounded-md hover:bg-surface-variant transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-stack-lg mt-auto bg-surface-container-highest dark:bg-on-surface border-t border-outline-variant text-primary dark:text-primary-fixed font-body-md text-body-md">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<div class="font-title-md text-title-md text-on-surface dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+                    © 2024 The Education Space. All rights reserved.
+                </div>
+<div class="flex flex-wrap gap-4 justify-center md:justify-end">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 md:hidden bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant shadow-lg font-label-sm text-label-sm text-primary dark:text-primary-fixed-dim fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-margin-mobile">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant scale-95 duration-100 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant scale-95 duration-100 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="school">school</span>
+<span>My Courses</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant scale-95 duration-100 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="trending_up">trending_up</span>
+<span>Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant scale-95 duration-100 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</nav>
+<!-- Overlay/Modal (Hidden by default, structure provided for Add User) -->
+<div class="fixed inset-0 bg-on-surface/50 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-xl border border-outline-variant flex flex-col overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-[#F8F9FA]">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="person_add">person_add</span>
+                    Provision New User
+                </h2>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Full Name</label>
+<input class="w-full border border-[#CBD5E1] rounded-lg px-3 py-2 font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all" placeholder="Enter full name" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Email Address</label>
+<input class="w-full border border-[#CBD5E1] rounded-lg px-3 py-2 font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all" placeholder="name@institution.edu" type="email"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Assign Role</label>
+<select class="w-full border border-[#CBD5E1] rounded-lg px-3 py-2 font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-white">
+<option value="">Select a role...</option>
+<option value="admin">Administrator - Full Access</option>
+<option value="teacher">Teacher - Course Level Access</option>
+<option value="student">Student - Read Only</option>
+</select>
+</div>
+<div class="mt-2 border border-outline-variant rounded-lg p-4 bg-surface-bright">
+<h3 class="font-label-sm text-label-sm text-on-surface font-semibold mb-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="vpn_key">vpn_key</span>
+                        Security Requirements
+                    </h3>
+<label class="flex items-center gap-2 font-body-md text-body-md text-on-surface-variant cursor-pointer">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+                        Require Multi-Factor Authentication (MFA) on first login
+                    </label>
+</div>
+</div>
+<div class="p-6 border-t border-outline-variant bg-[#F8F9FA] flex justify-end gap-3">
+<button class="px-4 py-2 border border-[#1A1A1A] text-[#1A1A1A] rounded-lg font-body-md text-body-md font-medium hover:bg-surface-variant transition-colors">Cancel</button>
+<button class="px-4 py-2 bg-[#D66B3D] text-white rounded-lg font-body-md text-body-md font-medium hover:bg-primary transition-colors shadow-sm">Create User</button>
+</div>
+</div>
+</div>
+</body></html>

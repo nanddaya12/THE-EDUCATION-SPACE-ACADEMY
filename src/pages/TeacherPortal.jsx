@@ -69,7 +69,7 @@ const DEFAULT_EXAMS_LIST = [
 
 const DEFAULT_LEAVE_REQUESTS = [
   { id: 'lv-1', reason: 'Annual Faculty Research Symposium', startDate: '2026-10-05', endDate: '2026-10-07', substituteTeacher: 'Prof. Marcus Vance', status: 'APPROVED' },
-  { id: 'lv-2', reason: 'Family Medical Emergency', startDate: '2026-11-12', endDate: '2026-11-12', substituteTeacher: 'Dr. Arthur Pendelton', status: 'PENDING' }
+  { id: 'lv-2', reason: 'Family Medical Emergency', startDate: '2026-11-12', endDate: '2026-11-12', substituteTeacher: 'Prof. Niaz Dars', status: 'PENDING' }
 ];
 
 export const TeacherPortal = () => {

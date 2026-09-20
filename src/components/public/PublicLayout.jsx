@@ -157,15 +157,22 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
 
           {/* Mobile Right: Apply + Hamburger */}
           <div className="flex sm:hidden items-center gap-2">
+            <a
+              href="tel:03332613913"
+              className="bg-white/10 text-amber-400 p-2 rounded border border-white/15 active:scale-95 transition-transform"
+              aria-label="Call Admissions"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
             <button
               onClick={() => handleNavClick('apply-online')}
-              className="bg-[#e05626] text-white text-xs font-bold px-3 py-1.5 rounded"
+              className="bg-[#e05626] text-white text-xs font-bold px-3 py-1.5 rounded active:scale-95 transition-transform"
             >
               Apply
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-slate-300 hover:text-white"
+              className="p-2 text-slate-300 hover:text-white rounded focus:outline-none focus:ring-2 focus:ring-[#e05626]/50"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -173,26 +180,70 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#0b1c30] border-t border-slate-800 px-4 py-4 space-y-2 animate-in slide-in-from-top-2">
-            {MOBILE_NAV_LINKS.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => handleNavClick(link.id)}
-                className="w-full text-left py-2 text-slate-200 hover:text-[#e05626] font-semibold text-xs border-b border-slate-800/60"
-              >
-                {link.label}
-              </button>
-            ))}
+          <div className="lg:hidden bg-[#0b1c30] border-t border-slate-800 px-4 py-5 space-y-3 animate-in slide-in-from-top-3 max-h-[85vh] overflow-y-auto">
+            {/* Campus Info Chip */}
+            <div className="bg-slate-900/90 border border-slate-700/60 rounded p-3 text-xs text-slate-300 space-y-1.5">
+              <div className="flex items-center gap-2 text-amber-400 font-bold">
+                <MapPin className="w-3.5 h-3.5 text-[#e05626]" />
+                <span>TES Academy Qasimabad, Hyderabad</span>
+              </div>
+              <p className="text-[11px] text-slate-400">
+                Above Soneri Bank, Nasim Nagar. Directed by Prof. Niaz Dars.
+              </p>
+              <div className="flex items-center gap-3 pt-1 text-[11px]">
+                <a href="tel:03332613913" className="text-white hover:text-[#e05626] font-bold flex items-center gap-1">
+                  <Phone className="w-3 h-3 text-[#e05626]" />
+                  <span>0333 2613913</span>
+                </a>
+                <span className="text-slate-600">|</span>
+                <a href="tel:03423738346" className="text-white hover:text-[#e05626] font-bold flex items-center gap-1">
+                  <Phone className="w-3 h-3 text-[#e05626]" />
+                  <span>0342 3738346</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="grid grid-cols-1 gap-1">
+              {MOBILE_NAV_LINKS.map((link) => {
+                const isActive = activePage === link.id;
+                return (
+                  <button
+                    key={link.id}
+                    onClick={() => handleNavClick(link.id)}
+                    className={`w-full text-left px-3.5 py-2.5 rounded-sm font-semibold text-xs transition-colors flex items-center justify-between min-h-[44px] ${
+                      isActive 
+                        ? 'bg-[#e05626] text-white font-bold shadow-sm' 
+                        : 'text-slate-200 hover:bg-slate-800/80 hover:text-white'
+                    }`}
+                  >
+                    <span>{link.label}</span>
+                    {isActive && <ArrowRight className="w-3.5 h-3.5" />}
+                  </button>
+                );
+              })}
+            </div>
 
             <div className="pt-3 border-t border-slate-700/80 flex flex-col gap-2">
               <button
-                onClick={() => setCurrentView('login')}
-                className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs py-2 rounded text-center flex items-center justify-center gap-1.5"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setCurrentView('login');
+                }}
+                className="w-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-xs py-2.5 rounded min-h-[44px] flex items-center justify-center gap-2"
               >
-                <LogIn className="w-3.5 h-3.5 text-[#e05626]" />
-                <span>Portal Login</span>
+                <LogIn className="w-4 h-4 text-[#e05626]" />
+                <span>Portal Login (Students & Staff)</span>
+              </button>
+
+              <button
+                onClick={() => handleNavClick('apply-online')}
+                className="w-full bg-[#e05626] hover:bg-[#c9461b] text-white font-bold text-xs py-2.5 rounded min-h-[44px] flex items-center justify-center gap-2 shadow-sm"
+              >
+                <span>Online Admission Form 2026-27</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
@@ -200,9 +251,35 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
       </header>
 
       {/* Main Public Page Content */}
-      <main className="flex-1 bg-white">
+      <main className="flex-1 bg-white pb-16 sm:pb-0">
         {children}
       </main>
+
+      {/* Persistent Mobile Bottom Quick Action Bar */}
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0b1c30]/95 backdrop-blur border-t border-slate-800 px-3 py-2 flex items-center gap-2 shadow-2xl">
+        <a
+          href="tel:03332613913"
+          className="flex-1 bg-white/10 hover:bg-white/20 active:bg-white/30 text-white text-xs font-bold py-2.5 rounded flex items-center justify-center gap-1.5 border border-white/15 transition-all"
+        >
+          <Phone className="w-3.5 h-3.5 text-amber-400" />
+          <span>Call Us</span>
+        </a>
+        <a
+          href="https://wa.me/923332613913?text=Hello%20TES%20Academy%2C%20I%20want%20information%20about%20admissions"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded flex items-center justify-center gap-1.5 shadow-sm transition-all"
+        >
+          <span>WhatsApp</span>
+        </a>
+        <button
+          onClick={() => handleNavClick('apply-online')}
+          className="flex-1 bg-[#e05626] hover:bg-[#c9461b] active:bg-[#b03d15] text-white text-xs font-bold py-2.5 rounded flex items-center justify-center gap-1.5 shadow-sm transition-all"
+        >
+          <span>Apply</span>
+          <ArrowRight className="w-3 h-3" />
+        </button>
+      </div>
 
       {/* Executive Dark Academy Footer */}
       <footer className="bg-[#0b131e] text-slate-300 text-xs border-t border-slate-800 pt-16 pb-8">
@@ -297,10 +374,16 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
             <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">Contact & Visit</span>
             <ul className="space-y-2.5 text-[11px] text-slate-400">
               <li>
-                <a href="tel:03332613913" className="flex items-center gap-1.5 text-white hover:text-[#e05626] font-bold">
-                  <Phone className="w-3.5 h-3.5 text-[#e05626]" />
-                  <span>0333 2613913</span>
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:03332613913" className="flex items-center gap-1.5 text-white hover:text-[#e05626] font-bold">
+                    <Phone className="w-3.5 h-3.5 text-[#e05626]" />
+                    <span>0333 2613913 <span className="text-[10px] text-slate-400 font-normal">(Admissions)</span></span>
+                  </a>
+                  <a href="tel:03423738346" className="flex items-center gap-1.5 text-slate-300 hover:text-[#e05626] font-medium text-[11px]">
+                    <Phone className="w-3.5 h-3.5 text-[#e05626]" />
+                    <span>0342 3738346 <span className="text-[10px] text-slate-400 font-normal">(Information)</span></span>
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-[#e05626]" />

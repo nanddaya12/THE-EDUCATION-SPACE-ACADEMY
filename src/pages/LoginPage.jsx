@@ -61,12 +61,6 @@ export const LoginPage = () => {
     });
   };
 
-  const handleQuickLogin = (demoEmail) => {
-    setEmail(demoEmail);
-    setPassword('Password@123');
-    handleLogin(demoEmail, 'Password@123');
-  };
-
   return (
     <div className="min-h-screen bg-surface flex items-center justify-center p-4">
       {/* Ambient background glow */}
@@ -195,47 +189,25 @@ export const LoginPage = () => {
               </button>
             </form>
 
-            {/* Quick Demo Pre-fills */}
-            <div className="pt-4 border-t border-slate-100 space-y-2">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block text-center">
-                Quick One-Click Demo Logins
-              </span>
+            {/* Institutional Security Notice */}
+            <div className="pt-4 border-t border-slate-100 space-y-3">
+              <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-3.5 text-center space-y-1">
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">
+                  Institutional Portal Access
+                </span>
+                <p className="text-[11px] text-slate-600 leading-relaxed">
+                  Authorized faculty, administrators, parents, and enrolled students should sign in using their issued credentials.
+                </p>
+              </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+              <div className="text-center">
                 <button
                   type="button"
-                  onClick={() => handleQuickLogin('admin@educationspace.edu')}
-                  className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-[11px] truncate flex items-center justify-center gap-1"
+                  onClick={() => setCurrentView('public-admissions')}
+                  className="text-primary hover:text-primary-hover font-bold text-xs inline-flex items-center gap-1.5 transition-colors"
                 >
-                  <span>🔑 Admin</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickLogin('teacher@educationspace.edu')}
-                  className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-[11px] truncate flex items-center justify-center gap-1"
-                >
-                  <span>👩‍🏫 Teacher</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickLogin('alex.rivera@edu.com')}
-                  className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-[11px] truncate flex items-center justify-center gap-1"
-                >
-                  <span>🎓 Student</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickLogin('parent@educationspace.edu')}
-                  className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-[11px] truncate flex items-center justify-center gap-1"
-                >
-                  <span>👨‍👩‍👧 Parent</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickLogin('accountant@educationspace.edu')}
-                  className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-[11px] truncate flex items-center justify-center gap-1 sm:col-span-2"
-                >
-                  <span>💼 Accountant</span>
+                  <span>New Student? Go to Online Admissions Portal</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>

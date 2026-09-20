@@ -109,7 +109,7 @@ const DEFAULT_SYSTEM_CONFIG = {
   documents: {
     autoWatermarkCertificates: 'Enabled with Academy Seal',
     qrVerificationEnabled: 'Enabled (Tamper-Proof Online Validation)',
-    signatureSignOff: 'Dr. Arthur Pendelton (Campus Principal)'
+    signatureSignOff: 'Prof. Niaz Dars (Director of Academics)'
   },
   reports: {
     defaultFormat: 'PDF Document & Excel XLSX',

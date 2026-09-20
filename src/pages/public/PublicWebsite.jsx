@@ -39,83 +39,84 @@ import {
 const FALLBACK_NEWS_ARTICLES = [
   {
     id: 'news-1',
-    title: 'Academy Students Win International Robotics Gold Medal',
-    slug: 'academy-students-win-international-robotics-gold-medal',
-    summary: 'Our STEM team placed 1st among 45 competing international schools in Tokyo with autonomous obstacle navigators.',
-    content: 'The Education Space Academy robotics team has achieved historic international success at the World VEX Robotics Championship in Tokyo. Competing against 45 prestigious institutions across Europe, Asia, and North America, our Grade 11 STEM students secured the Gold Medal in autonomous obstacle navigation and AI sensor integration.\n\nThe student team spent six months designing and prototyping the rover in the academy\'s advanced robotics laboratory under the guidance of our engineering faculty.\n\n"This victory represents the dedication, collaborative spirit, and technological ingenuity that we foster every day at The Education Space Academy," stated Dr. Arthur Pendelton during the award ceremony.',
-    featuredImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800',
+    title: 'TES Academy Scholars Achieve Outstanding Ranks in NUST (NET) & Entry Tests',
+    slug: 'tes-academy-scholars-achieve-outstanding-ranks-in-nust-net',
+    summary: 'Our coaching batches celebrate historic high percentiles in NUST NET Series and Sindh medical/engineering entrance tests.',
+    content: 'The Education Space Academy (TES Academy Qasimabad) celebrates extraordinary success across the recent NUST National Entry Test (NET) series and regional engineering/medical entrance exams. Over 85% of enrolled coaching scholars secured top-percentile marks, gaining admission into NUST Islamabad, MUET Jamshoro, NED Karachi, and top public sector medical colleges.\n\nUnder the direct supervision and diagnostic testing methodology led by Prof. Niaz Dars, students completed over 10,000 past-paper multiple choice questions, daily speed drills, and weekend mock examinations.\n\n"Consistency, conceptual mastery, and disciplined practice in our study library are what set our students apart every year," said Prof. Niaz Dars during the merit distribution ceremony.',
+    featuredImage: '/images/tes_students_success.jpg',
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600', caption: 'Robotics Team receiving award in Tokyo' },
-      { url: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600', caption: 'Autonomous rover showcase' }
+      { url: '/images/tes_students_success.jpg', caption: 'High-achieving TES Academy scholars celebrating admission offers' },
+      { url: '/images/tes_smart_classroom.jpg', caption: 'Entry test lecture hall at Qasimabad campus' }
     ],
     category: 'ACHIEVEMENTS',
-    author: { id: 'admin-1', name: 'Dr. Arthur Pendelton', role: 'Principal & Academic Director' },
+    author: { id: 'admin-1', name: 'Prof. Niaz Dars', role: 'Director of Academics' },
     publishDate: '2026-08-15T00:00:00.000Z'
   },
   {
     id: 'news-2',
-    title: 'New AI & Supercomputing Lab Inaugurated',
-    slug: 'new-ai-and-supercomputing-lab-inaugurated',
-    summary: 'State-of-the-art supercomputing workstations installed for Grade 11 & 12 Computer Science students.',
-    content: 'To support advanced artificial intelligence and data science coursework, the academy has launched a dedicated AI Supercomputing Hub equipped with NVIDIA RTX workstations, IoT testing rigs, and 3D prototyping suites.\n\nStudents will work on machine learning models, natural language processing, and computer vision projects integrated into our Cambridge Computer Science curriculum.\n\nThe facility is powered by high-speed fiber connectivity and high-throughput research compute clusters, ensuring students experience industrial-grade technology from their secondary school years.',
-    featuredImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800',
+    title: 'Dedicated Air-Conditioned Study Library & Book Bank Inaugurated at Qasimabad Campus',
+    slug: 'dedicated-ac-study-library-inaugurated-qasimabad',
+    summary: 'State-of-the-art quiet study hall with individual cubicles, high-speed Wi-Fi, and reference textbooks opens daily from 6:30 AM.',
+    content: 'To provide Hyderabad students with a distraction-free academic environment, TES Academy has officially expanded its campus facilities with a dedicated Air-Conditioned Study Library and Comprehensive Book Bank above Soneri Bank, Main Road Nasim Nagar.\n\nThe facility features ergonomic individual wooden cubicles, personalized reading lights, air conditioning, and thousands of updated curriculum textbooks for Physics, Chemistry, Mathematics, Biology, and Computer Science.\n\nThe study library remains accessible from 6:30 AM to late evening for enrolled coaching students and registered study library members.',
+    featuredImage: '/images/tes_study_library.jpg',
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600', caption: 'Supercomputing Workstations' }
+      { url: '/images/tes_study_library.jpg', caption: 'Quiet study cubicles and reference textbook collection' }
     ],
     category: 'INFRASTRUCTURE',
-    author: { id: 'admin-2', name: 'Eleanor Vance', role: 'Head of Computer Science' },
+    author: { id: 'admin-2', name: 'Campus Administration', role: 'TES Academy Hyderabad' },
     publishDate: '2026-08-01T00:00:00.000Z'
   },
   {
     id: 'news-3',
-    title: 'Inter-House Parliamentary Debating Gala Concludes',
-    slug: 'inter-house-parliamentary-debating-gala-concludes',
-    summary: 'Over 120 delegates debated global climate resilience, digital sovereignty, and ethical governance.',
-    content: 'The Humanities Wing hosted the 2026 Inter-House Parliamentary Debating Championship. Across three rigorous rounds, scholars representing Newton, Curie, Iqbal, and Socrates houses debated pressing modern issues including multilateral trade agreements, renewable transition pacts, and youth digital privacy.\n\nCurie House took home the Champions Cup following an electrifying grand finale on international artificial intelligence treaties.',
-    featuredImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800',
+    title: 'Admissions Open: Classes IX, X, XI, XII & Grand Entry Test Batches Announced',
+    slug: 'admissions-open-classes-9-10-11-12-entry-tests',
+    summary: 'Admissions now open for Pre-Engineering, Pre-Medical, ICS, Matriculation, and university entry test prep. Call 0333 2613913.',
+    content: 'TES Academy Qasimabad announces open admissions for Session 2026-2027 across all coaching programs: Classes IX and X (Science Group), Classes XI and XII (Pre-Engineering, Pre-Medical, ICS), and crash preparatory courses for NUST NET, MDCAT, ECAT, MUET, and NED.\n\nKey features include experienced master faculty led by Prof. Niaz Dars, daily testing drills, chapter-wise analytical test series, AC classrooms, and hostel facilities for outstation students.\n\nProspective parents and students may visit the campus above Soneri Bank, GMB Colony, Nasim Nagar or contact the helpline at 0333 2613913 / 0342 3738346.',
+    featuredImage: '/images/tes_smart_classroom.jpg',
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600', caption: 'Championship debate in the Main Auditorium' }
+      { url: '/images/tes_smart_classroom.jpg', caption: 'Multimedia science lecture at TES Academy' },
+      { url: '/images/tes_campus_exterior.jpg', caption: 'Main Qasimabad campus building' }
     ],
     category: 'ACADEMICS',
-    author: { id: 'admin-3', name: 'Tariq Mansoor', role: 'Head of Humanities & Social Sciences' },
+    author: { id: 'admin-3', name: 'Admissions Directorate', role: 'TES Academy Qasimabad' },
     publishDate: '2026-07-28T00:00:00.000Z'
   },
   {
     id: 'news-4',
-    title: 'Green Campus Initiative: 100kW Solar Installation Completed',
-    slug: 'green-campus-initiative-100kw-solar-installation',
-    summary: 'The academy transitions 65% of its peak energy consumption to clean rooftop photovoltaic arrays.',
-    content: 'As part of our commitment to environmental stewardship and hands-on sustainability education, The Education Space Academy has completed the commissioning of a 100kW rooftop photovoltaic solar array.\n\nThe real-time power generation data will be streamed directly into our Physics and Environmental Sciences classrooms for student data analysis projects.',
-    featuredImage: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?w=800',
+    title: 'Green Campus & Silent Study Initiative: Library Expansion',
+    slug: 'green-campus-silent-study-initiative-library-expansion',
+    summary: 'The academy adds 50 individual study carrels and solar-backed power to ensure zero disruption during peak prep months.',
+    content: 'As part of our commitment to providing students with an ideal study environment, The Education Space Academy has completed an expansion of its air-conditioned library.\n\nThe facility features dedicated power backup, high-speed academic Wi-Fi, and reference test banks for NUST, MDCAT, and Intermediate syllabi.',
+    featuredImage: '/images/tes_study_library.jpg',
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?w=600', caption: 'Rooftop solar panels commissioning' }
+      { url: '/images/tes_study_library.jpg', caption: 'Quiet study library and cubicles' }
     ],
-    category: 'CAMPUS_LIFE',
+    category: 'INFRASTRUCTURE',
     author: { id: 'admin-4', name: 'Campus Operations', role: 'Administration Wing' },
     publishDate: '2026-07-14T00:00:00.000Z'
   },
   {
     id: 'news-5',
-    title: 'National Mathematics Olympiad Top Honours',
+    title: 'National Mathematics & Entry Test Olympiad Top Honours',
     slug: 'national-mathematics-olympiad-top-honours',
-    summary: 'Four Academy scholars earn distinction certificates and qualify for the Asian Pacific Mathematics Olympiad.',
-    content: 'We are thrilled to announce that four students from Grade 10 and Grade 12 have achieved top percentile ranks in the National Mathematics Olympiad.\n\nTheir exceptional performance in combinatorial analysis, number theory, and geometric proofs earned them formal nominations to represent the national delegation.',
-    featuredImage: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800',
+    summary: 'TES Academy scholars score top percentiles in NUST NET-1 and provincial mathematics contests.',
+    content: 'We are thrilled to announce that our students have achieved top percentile ranks in the National Mathematics and NET-1 test series.\n\nTheir exceptional performance in algebra, calculus, and analytical speed reflects the rigorous daily testing methodology at TES Academy.',
+    featuredImage: '/images/tes_smart_classroom.jpg',
     gallery: [],
     category: 'ACHIEVEMENTS',
-    author: { id: 'admin-1', name: 'Dr. Arthur Pendelton', role: 'Principal & Academic Director' },
+    author: { id: 'admin-1', name: 'Prof. Niaz Dars', role: 'Director of Academics & Senior Physics' },
     publishDate: '2026-07-02T00:00:00.000Z'
   },
   {
     id: 'news-6',
-    title: 'Annual Sports Gala & Track Championship 2026',
-    slug: 'annual-sports-gala-and-track-championship-2026',
-    summary: 'Athletes set new academy sprint, relay, and badminton records during a thrilling 3-day championship.',
-    content: 'The campus athletic complex welcomed hundreds of students and parents for the 2026 Annual Sports Festival. Events spanned 100m sprint, 4x100m relays, football finals, and table tennis championships.\n\nCongratulations to all athletes for exemplifying sportsmanship, perseverance, and school spirit.',
-    featuredImage: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800',
+    title: 'TES Academy Annual Academic Awards & High Achievers Gala 2026',
+    slug: 'annual-academic-awards-and-high-achievers-gala-2026',
+    summary: 'Scholars and faculty celebrate 100% board pass rates and admissions into NUST, MUET, and Dow Medical.',
+    content: 'The academy organized its annual celebration honoring top position holders in SSC and HSC board exams as well as engineering and medical university entrance qualifiers.\n\nDirector Prof. Niaz Dars congratulated students and reiterated the institution\'s commitment to educational excellence in Hyderabad.',
+    featuredImage: '/images/tes_students_success.jpg',
     gallery: [],
-    category: 'SPORTS',
-    author: { id: 'admin-5', name: 'Sports Department', role: 'Athletic Director' },
+    category: 'CAMPUS_LIFE',
+    author: { id: 'admin-5', name: 'Academic Directorate', role: 'TES Academy' },
     publishDate: '2026-06-20T00:00:00.000Z'
   }
 ];
@@ -217,57 +218,57 @@ const FALLBACK_DOWNLOADS = [
 const FALLBACK_FACULTY = [
   {
     id: 'fac-1',
-    name: 'Dr. Arthur Pendelton',
-    role: 'Principal & Academic Director',
-    dept: 'Executive Leadership',
-    degrees: 'Ph.D. Educational Leadership (Oxford), M.Sc. Applied Physics',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600',
-    bio: 'Over 22 years leading premier international institutions in the UK, UAE, and Pakistan with a focus on holistic pedagogy.'
+    name: 'Prof. Niaz Dars',
+    role: 'Director of Academics & Senior Physics Faculty',
+    dept: 'Executive Leadership & Physics',
+    degrees: 'M.Sc. Physics (Distinction), Senior Board Paper & Entry Test Specialist',
+    image: '/images/tes_director_portrait.jpg',
+    bio: 'Renowned academic mentor leading TES Academy Qasimabad with over 20 years of excellence in physics concept coaching and university test preparation.'
   },
   {
     id: 'fac-2',
-    name: 'Eleanor Vance',
-    role: 'Head of Computer Science & Robotics',
-    dept: 'STEM Wing',
-    degrees: 'M.Sc. Artificial Intelligence & Robotics (Imperial College London)',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600',
-    bio: 'Mentor to championship-winning robotics teams and lead curriculum architect for secondary computing.'
+    name: 'Engr. Tariq Memon',
+    role: 'Head of Mathematics & NUST (NET) Specialist',
+    dept: 'Mathematics & Entry Test Wing',
+    degrees: 'B.E. Mechatronics, M.Sc. Applied Mathematics',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600',
+    bio: 'Specialist in speed-solving shortcuts, calculus, trigonometry, and analytical entry test mathematics for NUST, ECAT, and MUET.'
   },
   {
     id: 'fac-3',
-    name: 'Prof. Tariq Mansoor',
-    role: 'Head of Humanities & Social Sciences',
-    dept: 'Humanities Wing',
-    degrees: 'M.Phil. International Relations, B.A. (Hons) Literature',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600',
-    bio: 'Renowned debate adjudicator with 15+ years guiding students to national and international MUN awards.'
+    name: 'Dr. Asma Soomro',
+    role: 'Head of Biology & MDCAT Medical Prep Lead',
+    dept: 'Life Sciences & Pre-Medical',
+    degrees: 'MBBS, M.Phil. Medical Sciences, Certified Medical Instructor',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600',
+    bio: 'Dedicated medical mentor coaching Pre-Medical Intermediate students to top positions in PMDC MDCAT and Sindh Board examinations.'
   },
   {
     id: 'fac-4',
-    name: 'Dr. Sarah Al-Hashimi',
-    role: 'Lead Faculty - Pure Chemistry & Life Sciences',
-    dept: 'STEM Wing',
-    degrees: 'Ph.D. Bio-organic Chemistry, Cambridge Certified Instructor',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600',
-    bio: 'Pioneered experiential lab curriculum bridging molecular chemistry with modern environmental studies.'
+    name: 'Prof. Farooq Shah',
+    role: 'Senior Faculty - Organic & Physical Chemistry',
+    dept: 'Chemistry Wing',
+    degrees: 'M.Sc. Chemistry (Gold Medalist), Senior HSC Examiner',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600',
+    bio: 'Over 18 years of classroom experience coaching conceptual chemical kinetics, organic synthesis, and high-scoring board techniques.'
   },
   {
     id: 'fac-5',
-    name: 'Marcus Sterling',
-    role: 'Head of College Placement & University Counseling',
-    dept: 'Student Welfare',
-    degrees: 'M.Ed. Higher Education Guidance (Harvard GSE)',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600',
-    bio: 'Helped over 800 alumni secure admissions and scholarships at Ivy League, Russell Group, and top national universities.'
+    name: 'Sir Zeeshan Ali',
+    role: 'Head of Computer Science & ICS Faculty',
+    dept: 'Computer Science & IT',
+    degrees: 'BS / MS Computer Science (FAST-NUCES)',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600',
+    bio: 'Guides intermediate ICS students through programming foundations, computer architecture, database concepts, and entry test logic.'
   },
   {
     id: 'fac-6',
-    name: 'Zainab Qureshi',
-    role: 'Senior Instructor - Pure & Applied Mathematics',
-    dept: 'STEM Wing',
-    degrees: 'M.Sc. Mathematics, National Board Chief Examiner',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600',
-    bio: 'Specialist in advanced calculus, analytical geometry, and Olympiad competition problem solving.'
+    name: 'Ma\'am Rabia Shaikh',
+    role: 'Senior Faculty - English & Analytical Reasoning',
+    dept: 'Language & Reasoning',
+    degrees: 'M.A. English Linguistics, Certified GRE / NET Verbal Adjudicator',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600',
+    bio: 'Specialist in advanced English grammar, reading comprehension, and verbal reasoning required for competitive university entrance.'
   }
 ];
 
@@ -294,12 +295,12 @@ export const PublicWebsite = () => {
     tagline: 'TES Academy Qasimabad • Hyderabad',
     mainTitle: 'Empowering Minds.',
     accentTitle: 'Shaping Tomorrow.',
-    description: 'Premier coaching center in Qasimabad, Hyderabad specializing in NUST Entry Test Preparation (NET), Intermediate XI & XII coaching, secondary science, and a quiet dedicated study library.',
+    description: 'Under the supervision of Prof. Niaz Dars, TES Academy (The Education Space Academy) is Hyderabad’s premier coaching institute for NUST Entry Test (NET), MDCAT, ECAT, Classes XI & XII, and secondary science with an air-conditioned study library.',
     primaryCtaText: 'Admission Open: 0333 2613913',
     primaryCtaLink: 'apply-online',
     secondaryCtaText: 'Explore Academics',
     secondaryCtaLink: 'academics',
-    heroImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&auto=format&fit=crop&q=80'
+    heroImage: '/images/tes_campus_exterior.jpg'
   };
 
   const annCfg = publicSiteConfig?.announcement;
@@ -510,8 +511,8 @@ export const PublicWebsite = () => {
               <section className="relative w-full bg-[#0b131e] overflow-hidden min-h-[calc(100vh-80px)] flex flex-col justify-between">
                 {/* Background image: dynamic from customizer */}
                 <img 
-                  src={heroCfg.heroImage || "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&auto=format&fit=crop&q=80"} 
-                  alt="Students collaborating on STEM and robotics" 
+                  src={heroCfg.heroImage || "/images/tes_campus_exterior.jpg"} 
+                  alt="TES Academy Qasimabad Hyderabad Campus" 
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
                 {/* Dark gradient overlay on the left for high editorial contrast */}
@@ -599,84 +600,95 @@ export const PublicWebsite = () => {
                     <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest">
                       OUR APPROACH
                     </div>
-                    <h2 className="font-serif text-3xl md:text-4xl text-slate-900 font-semibold tracking-tight leading-tight">
-                      Welcome to The Education Space Academy
+                    <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-slate-900 font-semibold tracking-tight leading-tight">
+                      Welcome to TES Academy Qasimabad
                     </h2>
-                    <p className="text-slate-600 text-sm leading-relaxed max-w-xl">
-                      We offer a rich academic environment where curiosity, critical thinking and character come together. Our curriculum is designed to help students build the knowledge, skills and values they need for future success.
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xl">
+                      Under the leadership of Prof. Niaz Dars, The Education Space Academy provides an exceptional academic environment combining daily concept drills, Sindh & Federal board mastery, and intensive entrance test coaching for Pakistan’s premier universities.
                     </p>
 
                     {/* 3 Value Pillars */}
-                    <div className="grid grid-cols-3 gap-6 pt-6 border-t border-slate-100">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-6 border-t border-slate-100">
                       <div>
                         <div className="font-serif text-2xl md:text-3xl font-bold text-[#e05626]">01</div>
-                        <div className="text-slate-900 text-xs font-bold mt-1.5 leading-snug">STEM & Innovation</div>
+                        <div className="text-slate-900 text-xs font-bold mt-1.5 leading-snug">Entry Test Mastery</div>
+                        <div className="text-slate-500 text-[11px] mt-0.5">NUST NET, MDCAT, ECAT & MUET</div>
                       </div>
                       <div>
                         <div className="font-serif text-2xl md:text-3xl font-bold text-[#e05626]">02</div>
-                        <div className="text-slate-900 text-xs font-bold mt-1.5 leading-snug">Global Perspective</div>
+                        <div className="text-slate-900 text-xs font-bold mt-1.5 leading-snug">Daily Testing System</div>
+                        <div className="text-slate-500 text-[11px] mt-0.5">Daily, Weekly & Monthly Exams</div>
                       </div>
                       <div>
                         <div className="font-serif text-2xl md:text-3xl font-bold text-[#e05626]">03</div>
-                        <div className="text-slate-900 text-xs font-bold mt-1.5 leading-snug">Character & Leadership</div>
+                        <div className="text-slate-900 text-xs font-bold mt-1.5 leading-snug">AC Study Library & Hostel</div>
+                        <div className="text-slate-500 text-[11px] mt-0.5">Quiet study carrels & book bank</div>
                       </div>
                     </div>
                   </div>
 
                   <div className="lg:col-span-5">
-                    <div className="overflow-hidden rounded-sm shadow-sm border border-slate-200">
+                    <div className="overflow-hidden rounded-sm shadow-md border border-slate-200 group">
                       <img 
-                        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1000&auto=format&fit=crop&q=80" 
-                        alt="Campus Grounds and Architecture" 
-                        className="w-full h-[320px] md:h-[360px] object-cover"
+                        src="/images/tes_students_success.jpg" 
+                        alt="TES Academy Successful Scholars" 
+                        className="w-full h-[280px] sm:h-[340px] md:h-[360px] object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   </div>
                 </div>
               </section>
 
-              {/* SECTION 3: LEADERSHIP / DR. ARTHUR PENDELTON */}
+              {/* SECTION 3: LEADERSHIP / PROF. NIAZ DARS */}
               <section className="bg-[#f8f9fa] py-16 md:py-20 border-t border-slate-200/60">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
                   <div className="md:col-span-5 flex justify-center md:justify-start">
-                    <div className="w-full max-w-sm rounded-sm overflow-hidden shadow-sm border border-slate-200">
+                    <div className="w-full max-w-sm rounded-sm overflow-hidden shadow-md border border-slate-200">
                       <img 
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&auto=format&fit=crop&q=80" 
-                        alt="Dr. Arthur Pendelton" 
-                        className="w-full h-[340px] md:h-[380px] object-cover"
+                        src="/images/tes_director_portrait.jpg" 
+                        alt="Prof. Niaz Dars - Director of Academics" 
+                        className="w-full h-[360px] md:h-[400px] object-cover"
                       />
                     </div>
                   </div>
 
                   <div className="md:col-span-7 space-y-4">
                     <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest">
-                      LEADERSHIP
+                      ACADEMIC LEADERSHIP & SUPERVISION
                     </div>
                     <h3 className="font-serif text-2xl md:text-3xl font-semibold text-slate-900 leading-tight">
-                      Dr. Arthur Pendelton
+                      Prof. Niaz Dars
                     </h3>
                     <div className="text-slate-500 text-xs font-medium -mt-2">
-                      Principal & Academic Director
+                      Director of Academics & Senior Academic Head
                     </div>
 
                     <blockquote className="border-l-2 border-[#e05626] pl-4 my-4">
                       <p className="font-serif italic text-slate-700 text-sm md:text-base leading-relaxed">
-                        "At The Education Space Academy, our mission is to cultivate critical thinkers and compassionate global leaders."
+                        "At TES Academy Qasimabad, our mission is to deliver unmatched preparation for NUST, MDCAT, and Intermediate board examinations through dedicated mentorship, daily testing drills, and an air-conditioned study environment."
                       </p>
                     </blockquote>
 
                     <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                      Welcome to our vibrant academic community where every student is empowered to achieve excellence.
+                      Under the supervision of Prof. Niaz Dars, TES Academy (The Education Space Academy) has established itself as Hyderabad's premier coaching and study library institution, helping hundreds of students secure top merit rankings in NUST, MUET, NED, and medical colleges.
                     </p>
 
-                    <div className="pt-2">
+                    <div className="pt-2 flex flex-wrap items-center gap-3">
                       <button 
                         onClick={() => setActivePage('principal-message')}
                         className="text-[#e05626] hover:text-[#c9461b] font-medium text-xs inline-flex items-center gap-1.5 transition-colors"
                       >
-                        <span>Read the Principal's Message</span>
+                        <span>Read Director's Message</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
+                      <span className="text-slate-300">|</span>
+                      <a 
+                        href="tel:03332613913" 
+                        className="text-slate-700 hover:text-[#e05626] font-bold text-xs inline-flex items-center gap-1 transition-colors"
+                      >
+                        <Phone className="w-3 h-3 text-[#e05626]" />
+                        <span>Call: 0333 2613913</span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -734,8 +746,8 @@ export const PublicWebsite = () => {
                     {/* Card 1: NUST Prep */}
                     <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow">
                       <img 
-                        src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" 
-                        alt="NUST Entry Test Preparation" 
+                        src="/images/tes_smart_classroom.jpg" 
+                        alt="NUST Entry Test Preparation at TES Academy" 
                         className="w-full h-40 object-cover"
                       />
                       <div className="p-5 space-y-2.5 flex-1 flex flex-col justify-between">
@@ -762,8 +774,8 @@ export const PublicWebsite = () => {
                     {/* Card 2: Intermediate Coaching */}
                     <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow">
                       <img 
-                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=80" 
-                        alt="XI & XII Intermediate Coaching" 
+                        src="/images/tes_students_success.jpg" 
+                        alt="XI & XII Intermediate Coaching at TES Academy" 
                         className="w-full h-40 object-cover"
                       />
                       <div className="p-5 space-y-2.5 flex-1 flex flex-col justify-between">
@@ -790,8 +802,8 @@ export const PublicWebsite = () => {
                     {/* Card 3: Secondary & Study Library */}
                     <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow">
                       <img 
-                        src="https://images.unsplash.com/photo-1532012164546-f432f2e37271?w=600&auto=format&fit=crop&q=80" 
-                        alt="Secondary Science and Study Library" 
+                        src="/images/tes_study_library.jpg" 
+                        alt="Secondary Science and Study Library at TES Academy" 
                         className="w-full h-40 object-cover"
                       />
                       <div className="p-5 space-y-2.5 flex-1 flex flex-col justify-between">
@@ -846,39 +858,39 @@ export const PublicWebsite = () => {
                     <div>
                       <div className="overflow-hidden rounded-sm border border-slate-200 shadow-sm">
                         <img 
-                          src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&fit=crop&q=80" 
-                          alt="STEM & Robotics" 
+                          src="/images/tes_smart_classroom.jpg" 
+                          alt="Smart Classrooms & Testing" 
                           className="w-full h-36 object-cover"
                         />
                       </div>
                       <span className="text-slate-900 text-xs font-bold mt-2.5 block">
-                        STEM & Robotics
+                        Smart Classrooms & Testing
                       </span>
                     </div>
 
                     <div>
                       <div className="overflow-hidden rounded-sm border border-slate-200 shadow-sm">
                         <img 
-                          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&auto=format&fit=crop&q=80" 
-                          alt="Student Leadership" 
+                          src="/images/tes_study_library.jpg" 
+                          alt="A/C Study Library & Book Bank" 
                           className="w-full h-36 object-cover"
                         />
                       </div>
                       <span className="text-slate-900 text-xs font-bold mt-2.5 block">
-                        Student Leadership
+                        A/C Study Library & Book Bank
                       </span>
                     </div>
 
                     <div>
                       <div className="overflow-hidden rounded-sm border border-slate-200 shadow-sm">
                         <img 
-                          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&auto=format&fit=crop&q=80" 
-                          alt="Campus Community" 
+                          src="/images/tes_students_success.jpg" 
+                          alt="Scholars & NUST Admissions" 
                           className="w-full h-36 object-cover"
                         />
                       </div>
                       <span className="text-slate-900 text-xs font-bold mt-2.5 block">
-                        Campus Community
+                        Scholars & NUST Admissions
                       </span>
                     </div>
                   </div>
@@ -968,8 +980,8 @@ export const PublicWebsite = () => {
                 {/* Subtle architectural background texture */}
                 <div className="absolute inset-0 opacity-15 mix-blend-overlay pointer-events-none">
                   <img 
-                    src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&auto=format&fit=crop&q=80" 
-                    alt="Campus Architecture Background" 
+                    src="/images/tes_campus_exterior.jpg" 
+                    alt="TES Academy Campus Architecture" 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -1092,7 +1104,7 @@ export const PublicWebsite = () => {
                     <div className="md:col-span-4">
                       <div className="overflow-hidden rounded-sm border border-slate-200 shadow-sm relative group">
                         <img 
-                          src="https://images.unsplash.com/photo-1562774053-701939374585?w=700&auto=format&fit=crop&q=80" 
+                          src="/images/tes_campus_exterior.jpg" 
                           alt="TES Academy Qasimabad Campus" 
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
@@ -1114,11 +1126,16 @@ export const PublicWebsite = () => {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-4 h-4 text-[#e05626] shrink-0" />
-                        <a href="tel:03332613913" className="font-bold text-slate-900 hover:text-[#e05626] transition-colors">
-                          0333 2613913 (Direct Admission Helpline)
-                        </a>
+                      <div className="flex items-start gap-3">
+                        <Phone className="w-4 h-4 text-[#e05626] shrink-0 mt-0.5" />
+                        <div className="flex flex-col gap-0.5">
+                          <a href="tel:03332613913" className="font-bold text-slate-900 hover:text-[#e05626] transition-colors">
+                            0333 2613913 <span className="font-normal text-slate-500 text-[11px]">(Admissions Helpline)</span>
+                          </a>
+                          <a href="tel:03423738346" className="font-bold text-slate-900 hover:text-[#e05626] transition-colors">
+                            0342 3738346 <span className="font-normal text-slate-500 text-[11px]">(Student Affairs & Info)</span>
+                          </a>
+                        </div>
                       </div>
 
                       <div className="flex items-center gap-3">
@@ -1442,8 +1459,8 @@ export const PublicWebsite = () => {
                   {/* Filters & Search Toolbar */}
                   <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-[#f8f9fa] p-4 rounded-sm border border-slate-200">
                     {/* Category Filter Pills */}
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-slate-500 text-xs font-semibold mr-1 flex items-center gap-1">
+                    <div className="flex items-center gap-2 overflow-x-auto pb-1 max-w-full sm:flex-wrap">
+                      <span className="text-slate-500 text-xs font-semibold mr-1 shrink-0 flex items-center gap-1">
                         <Filter className="w-3 h-3 text-[#e05626]" /> Filter:
                       </span>
                       {[
@@ -1828,40 +1845,47 @@ export const PublicWebsite = () => {
           {activePage === 'principal-message' && (
             <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-8">
               <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest">LEADERSHIP PERSPECTIVE</div>
-              <h1 className="font-serif text-3xl md:text-5xl font-semibold text-slate-900">Message from the Principal</h1>
+              <h1 className="font-serif text-3xl md:text-5xl font-semibold text-slate-900">Message from the Director</h1>
               
               <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
                 <div className="md:col-span-4">
                   <img 
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&auto=format&fit=crop&q=80" 
-                    alt="Dr. Arthur Pendelton" 
+                    src="/images/tes_director_portrait.jpg" 
+                    alt="Prof. Niaz Dars" 
                     className="w-full h-80 object-cover rounded-sm border border-slate-200 shadow-sm"
                   />
                   <div className="mt-3">
-                    <h3 className="font-serif font-bold text-lg text-slate-900">Dr. Arthur Pendelton</h3>
-                    <p className="text-slate-500 text-xs font-medium">Principal & Academic Director</p>
+                    <h3 className="font-serif font-bold text-lg text-slate-900">Prof. Niaz Dars</h3>
+                    <p className="text-slate-500 text-xs font-medium">Director of Academics & Senior Physics Faculty</p>
                   </div>
                 </div>
 
                 <div className="md:col-span-8 space-y-4 text-slate-700 text-sm leading-relaxed">
                   <blockquote className="border-l-4 border-[#e05626] pl-4 py-2 font-serif italic text-lg text-slate-800 bg-orange-50/40">
-                    "At The Education Space Academy, our mission is to cultivate critical thinkers and compassionate global leaders."
+                    "At The Education Space Academy (TES), our mission is to empower every student with conceptual mastery, daily testing rigor, and top admissions in NUST, MDCAT, ECAT, and Board Exams."
                   </blockquote>
 
                   <p>
-                    Dear Students, Parents, and Friends of The Academy,
+                    Dear Students, Parents, and Aspirants of TES Academy,
                   </p>
                   <p>
-                    Education is undergoing a transformative era. The skills required for success in tomorrow's world demand not only academic prowess in science, technology, and mathematics, but also deep cultural empathy, moral integrity, and articulate communication.
+                    Quality coaching is not just about memorizing formulas; it is about building analytical clarity, mental discipline, and the speed necessary to conquer competitive entrance exams. In Qasimabad Hyderabad, TES Academy was established under senior faculty supervision to provide an uncompromising standard of academic coaching for Classes IX to XII and top entry tests.
                   </p>
                   <p>
-                    At The Education Space Academy, we bridge the rigor of STEM exploration with the depth of the humanities. Our students learn to design algorithms, analyze scientific data, read world literature, and debate constitutional ethics—all in an inclusive, respectful environment.
+                    With our daily and weekly testing systems, air-conditioned study library, dedicated boys' hostel, and personalized mentoring by Sindh's top senior subject specialists, we ensure that every student's ambition finds the right launchpad.
                   </p>
                   <p>
-                    I warmly invite you to visit our Qasimabad Hyderabad academy, tour our modern lecture rooms, library, and laboratory facilities, and experience first-hand the energy of our scholars.
+                    I warmly invite students and parents to visit our campus above Soneri Bank in GMB Colony, Nasim Nagar, Qasimabad, tour our study facilities, and speak directly with our academic counselors.
                   </p>
 
-                  <div className="pt-4">
+                  <div className="pt-4 flex flex-wrap items-center gap-4">
+                    <a 
+                      href="tel:03332613913" 
+                      className="inline-flex items-center gap-2 bg-[#e05626] hover:bg-[#c9461b] text-white text-xs font-bold px-4 py-2.5 rounded-sm transition-colors shadow-sm"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>Direct Helpline: 0333 2613913</span>
+                    </a>
                     <button onClick={() => setActivePage('home')} className="text-[#e05626] hover:underline text-xs font-bold inline-flex items-center gap-1.5">
                       ← Back to Homepage
                     </button>
@@ -1967,7 +1991,7 @@ export const PublicWebsite = () => {
 
               {/* Filters Toolbar */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#f8f9fa] p-4 rounded-sm border border-slate-200">
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex items-center gap-2 overflow-x-auto pb-1 max-w-full sm:flex-wrap">
                   {['ALL', 'PROSPECTUS', 'CALENDAR', 'SYLLABUS', 'ADMISSIONS', 'HANDBOOK'].map((cat) => (
                     <button
                       key={cat}
@@ -2054,78 +2078,113 @@ export const PublicWebsite = () => {
               </div>
 
               {/* Fee Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Secondary STEM */}
-                <div className="bg-white border-2 border-slate-200 rounded-sm p-8 space-y-6 shadow-sm">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Secondary Wing (IX & X) */}
+                <div className="bg-white border border-slate-200 rounded-sm p-6 space-y-5 shadow-sm">
                   <div className="space-y-1">
-                    <span className="text-[#e05626] text-xs font-bold uppercase tracking-wider">Grades 9 - 10</span>
-                    <h3 className="font-serif text-2xl font-bold text-slate-900">Secondary STEM Wing</h3>
-                    <p className="text-slate-500 text-xs">Includes Robotics, Physics & Chemistry laboratories</p>
+                    <span className="text-[#e05626] text-xs font-bold uppercase tracking-wider">Classes IX & X</span>
+                    <h3 className="font-serif text-xl font-bold text-slate-900">SSC Matric Science Wing</h3>
+                    <p className="text-slate-500 text-xs">Complete Board syllabus with daily conceptual testing</p>
                   </div>
 
-                  <div className="space-y-3 divide-y divide-slate-100 text-xs text-slate-700">
+                  <div className="space-y-2.5 divide-y divide-slate-100 text-xs text-slate-700">
                     <div className="flex items-center justify-between pt-2">
-                      <span className="font-medium">Admission Fee (One-Time)</span>
-                      <span className="font-bold text-slate-900">PKR 45,000</span>
+                      <span className="font-medium">Admission Registration</span>
+                      <span className="font-bold text-slate-900">PKR 10,000</span>
                     </div>
                     <div className="flex items-center justify-between pt-2">
-                      <span className="font-medium">Monthly Tuition Fee</span>
-                      <span className="font-bold text-slate-900">PKR 28,000</span>
+                      <span className="font-medium">Monthly Coaching Fee</span>
+                      <span className="font-bold text-slate-900">PKR 12,000</span>
                     </div>
                     <div className="flex items-center justify-between pt-2">
-                      <span className="font-medium">STEM & Robotics Lab Levy</span>
-                      <span className="font-bold text-slate-900">PKR 4,500 / month</span>
+                      <span className="font-medium">Daily Chapter Test Series</span>
+                      <span className="font-bold text-emerald-700">Included Free</span>
                     </div>
                     <div className="flex items-center justify-between pt-2">
-                      <span className="font-medium">Security Deposit (Refundable)</span>
-                      <span className="font-bold text-slate-900">PKR 20,000</span>
+                      <span className="font-medium">Air-Conditioned Library Access</span>
+                      <span className="font-bold text-emerald-700">Included Free</span>
                     </div>
                   </div>
 
                   <button
                     onClick={() => setActivePage('apply-online')}
-                    className="w-full bg-[#0b1c30] hover:bg-[#e05626] text-white text-xs font-bold py-3 rounded transition-colors"
+                    className="w-full bg-[#0b1c30] hover:bg-[#e05626] text-white text-xs font-bold py-2.5 rounded transition-colors"
                   >
-                    Apply for Grade 9 - 10
+                    Enroll for IX & X
                   </button>
                 </div>
 
-                {/* Higher Secondary */}
-                <div className="bg-white border-2 border-[#e05626]/40 rounded-sm p-8 space-y-6 shadow-sm relative">
-                  <div className="absolute top-0 right-8 -translate-y-1/2 bg-[#e05626] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                    Most Enrolled
+                {/* Higher Secondary Wing (XI & XII) */}
+                <div className="bg-white border-2 border-[#e05626]/50 rounded-sm p-6 space-y-5 shadow-sm relative">
+                  <div className="absolute top-0 right-6 -translate-y-1/2 bg-[#e05626] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Most Popular
                   </div>
 
                   <div className="space-y-1">
-                    <span className="text-[#e05626] text-xs font-bold uppercase tracking-wider">Grades 11 - 12</span>
-                    <h3 className="font-serif text-2xl font-bold text-slate-900">Higher Secondary / A-Levels</h3>
-                    <p className="text-slate-500 text-xs">Cambridge A-Levels, Pre-Engineering & Humanities tracks</p>
+                    <span className="text-[#e05626] text-xs font-bold uppercase tracking-wider">Classes XI & XII</span>
+                    <h3 className="font-serif text-xl font-bold text-slate-900">HSC College Wing</h3>
+                    <p className="text-slate-500 text-xs">Pre-Medical, Pre-Engineering & ICS Computer Science</p>
                   </div>
 
-                  <div className="space-y-3 divide-y divide-slate-100 text-xs text-slate-700">
+                  <div className="space-y-2.5 divide-y divide-slate-100 text-xs text-slate-700">
                     <div className="flex items-center justify-between pt-2">
-                      <span className="font-medium">Admission Fee (One-Time)</span>
-                      <span className="font-bold text-slate-900">PKR 55,000</span>
+                      <span className="font-medium">Admission Registration</span>
+                      <span className="font-bold text-slate-900">PKR 15,000</span>
                     </div>
                     <div className="flex items-center justify-between pt-2">
-                      <span className="font-medium">Monthly Tuition Fee</span>
-                      <span className="font-bold text-slate-900">PKR 34,000</span>
+                      <span className="font-medium">Monthly Coaching Fee</span>
+                      <span className="font-bold text-slate-900">PKR 16,000</span>
                     </div>
                     <div className="flex items-center justify-between pt-2">
-                      <span className="font-medium">Advanced Media & Computing Suite</span>
-                      <span className="font-bold text-slate-900">PKR 5,500 / month</span>
+                      <span className="font-medium">Comprehensive Notes & Solved Papers</span>
+                      <span className="font-bold text-emerald-700">Included Free</span>
                     </div>
                     <div className="flex items-center justify-between pt-2">
-                      <span className="font-medium">Security Deposit (Refundable)</span>
-                      <span className="font-bold text-slate-900">PKR 25,000</span>
+                      <span className="font-medium">Weekly Grand Assessments</span>
+                      <span className="font-bold text-emerald-700">Included Free</span>
                     </div>
                   </div>
 
                   <button
                     onClick={() => setActivePage('apply-online')}
-                    className="w-full bg-[#e05626] hover:bg-[#c9461b] text-white text-xs font-bold py-3 rounded transition-colors shadow-sm"
+                    className="w-full bg-[#e05626] hover:bg-[#c9461b] text-white text-xs font-bold py-2.5 rounded transition-colors shadow-sm"
                   >
-                    Apply for Grade 11 - 12
+                    Enroll for XI & XII
+                  </button>
+                </div>
+
+                {/* Entry Test Wing (NUST / MDCAT / ECAT) */}
+                <div className="bg-white border border-slate-200 rounded-sm p-6 space-y-5 shadow-sm">
+                  <div className="space-y-1">
+                    <span className="text-[#e05626] text-xs font-bold uppercase tracking-wider">Top Engineering & Medical</span>
+                    <h3 className="font-serif text-xl font-bold text-slate-900">NUST, MDCAT & ECAT</h3>
+                    <p className="text-slate-500 text-xs">NET Series 1-4, MUET, NED, QUEST & Medical prep</p>
+                  </div>
+
+                  <div className="space-y-2.5 divide-y divide-slate-100 text-xs text-slate-700">
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Complete Session Course</span>
+                      <span className="font-bold text-slate-900">PKR 45,000</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Director Prof. Niaz Dars Physics</span>
+                      <span className="font-bold text-emerald-700">Special Lectures</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">20+ Full-Length Computer Mocks</span>
+                      <span className="font-bold text-emerald-700">Included Free</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Hostel Accommodation Support</span>
+                      <span className="font-bold text-slate-900">Available</span>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => setActivePage('apply-online')}
+                    className="w-full bg-[#0b1c30] hover:bg-[#e05626] text-white text-xs font-bold py-2.5 rounded transition-colors"
+                  >
+                    Enroll for Entry Test
                   </button>
                 </div>
               </div>
@@ -2240,10 +2299,10 @@ export const PublicWebsite = () => {
       {/* ARTICLE READER MODAL (DETAILED STORY VIEW)                                */}
       {/* ========================================================================= */}
       {selectedArticle && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-in fade-in-50">
-          <div className="bg-white w-full max-w-3xl rounded-sm shadow-2xl border border-slate-200 overflow-hidden my-8 max-h-[90vh] flex flex-col">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-2.5 sm:p-6 animate-in fade-in-50">
+          <div className="bg-white w-full max-w-3xl rounded-sm shadow-2xl border border-slate-200 overflow-hidden my-2 sm:my-8 max-h-[94vh] flex flex-col">
             {/* Modal Header Bar */}
-            <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-[#f8f9fa] shrink-0">
+            <div className="px-4 sm:px-6 py-3.5 border-b border-slate-200 flex items-center justify-between bg-[#f8f9fa] shrink-0">
               <div className="flex items-center gap-2">
                 <span className="bg-[#e05626] text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase tracking-wider">
                   {selectedArticle.category}
@@ -2263,7 +2322,7 @@ export const PublicWebsite = () => {
             </div>
 
             {/* Scrollable Story Content */}
-            <div className="overflow-y-auto p-6 md:p-8 space-y-6">
+            <div className="overflow-y-auto p-4 sm:p-8 space-y-5 sm:space-y-6">
               {/* Featured Image */}
               {selectedArticle.featuredImage && (
                 <div className="relative h-64 sm:h-80 rounded-sm overflow-hidden border border-slate-200 shadow-sm bg-slate-100">

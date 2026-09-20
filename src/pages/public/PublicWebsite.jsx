@@ -16,15 +16,260 @@ import {
   Briefcase, 
   Phone, 
   Mail, 
-  MapPin,
-  Clock,
-  CheckCircle2,
-  Sparkles,
-  ChevronDown,
-  ChevronUp,
-  Search,
-  LayoutDashboard
+  MapPin, 
+  Clock, 
+  CheckCircle2, 
+  Sparkles, 
+  ChevronDown, 
+  ChevronUp, 
+  Search, 
+  LayoutDashboard,
+  Tag,
+  ExternalLink,
+  FileText,
+  Filter,
+  Share2,
+  Newspaper,
+  GraduationCap,
+  Building2,
+  Trophy,
+  ShieldCheck
 } from 'lucide-react';
+
+const FALLBACK_NEWS_ARTICLES = [
+  {
+    id: 'news-1',
+    title: 'Academy Students Win International Robotics Gold Medal',
+    slug: 'academy-students-win-international-robotics-gold-medal',
+    summary: 'Our STEM team placed 1st among 45 competing international schools in Tokyo with autonomous obstacle navigators.',
+    content: 'The Education Space Academy robotics team has achieved historic international success at the World VEX Robotics Championship in Tokyo. Competing against 45 prestigious institutions across Europe, Asia, and North America, our Grade 11 STEM students secured the Gold Medal in autonomous obstacle navigation and AI sensor integration.\n\nThe student team spent six months designing and prototyping the rover in the academy\'s advanced robotics laboratory under the guidance of our engineering faculty.\n\n"This victory represents the dedication, collaborative spirit, and technological ingenuity that we foster every day at The Education Space Academy," stated Dr. Arthur Pendelton during the award ceremony.',
+    featuredImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800',
+    gallery: [
+      { url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600', caption: 'Robotics Team receiving award in Tokyo' },
+      { url: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600', caption: 'Autonomous rover showcase' }
+    ],
+    category: 'ACHIEVEMENTS',
+    author: { id: 'admin-1', name: 'Dr. Arthur Pendelton', role: 'Principal & Academic Director' },
+    publishDate: '2026-08-15T00:00:00.000Z'
+  },
+  {
+    id: 'news-2',
+    title: 'New AI & Supercomputing Lab Inaugurated',
+    slug: 'new-ai-and-supercomputing-lab-inaugurated',
+    summary: 'State-of-the-art supercomputing workstations installed for Grade 11 & 12 Computer Science students.',
+    content: 'To support advanced artificial intelligence and data science coursework, the academy has launched a dedicated AI Supercomputing Hub equipped with NVIDIA RTX workstations, IoT testing rigs, and 3D prototyping suites.\n\nStudents will work on machine learning models, natural language processing, and computer vision projects integrated into our Cambridge Computer Science curriculum.\n\nThe facility is powered by high-speed fiber connectivity and high-throughput research compute clusters, ensuring students experience industrial-grade technology from their secondary school years.',
+    featuredImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800',
+    gallery: [
+      { url: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600', caption: 'Supercomputing Workstations' }
+    ],
+    category: 'INFRASTRUCTURE',
+    author: { id: 'admin-2', name: 'Eleanor Vance', role: 'Head of Computer Science' },
+    publishDate: '2026-08-01T00:00:00.000Z'
+  },
+  {
+    id: 'news-3',
+    title: 'Inter-House Parliamentary Debating Gala Concludes',
+    slug: 'inter-house-parliamentary-debating-gala-concludes',
+    summary: 'Over 120 delegates debated global climate resilience, digital sovereignty, and ethical governance.',
+    content: 'The Humanities Wing hosted the 2026 Inter-House Parliamentary Debating Championship. Across three rigorous rounds, scholars representing Newton, Curie, Iqbal, and Socrates houses debated pressing modern issues including multilateral trade agreements, renewable transition pacts, and youth digital privacy.\n\nCurie House took home the Champions Cup following an electrifying grand finale on international artificial intelligence treaties.',
+    featuredImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800',
+    gallery: [
+      { url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600', caption: 'Championship debate in the Main Auditorium' }
+    ],
+    category: 'ACADEMICS',
+    author: { id: 'admin-3', name: 'Tariq Mansoor', role: 'Head of Humanities & Social Sciences' },
+    publishDate: '2026-07-28T00:00:00.000Z'
+  },
+  {
+    id: 'news-4',
+    title: 'Green Campus Initiative: 100kW Solar Installation Completed',
+    slug: 'green-campus-initiative-100kw-solar-installation',
+    summary: 'The academy transitions 65% of its peak energy consumption to clean rooftop photovoltaic arrays.',
+    content: 'As part of our commitment to environmental stewardship and hands-on sustainability education, The Education Space Academy has completed the commissioning of a 100kW rooftop photovoltaic solar array.\n\nThe real-time power generation data will be streamed directly into our Physics and Environmental Sciences classrooms for student data analysis projects.',
+    featuredImage: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?w=800',
+    gallery: [
+      { url: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?w=600', caption: 'Rooftop solar panels commissioning' }
+    ],
+    category: 'CAMPUS_LIFE',
+    author: { id: 'admin-4', name: 'Campus Operations', role: 'Administration Wing' },
+    publishDate: '2026-07-14T00:00:00.000Z'
+  },
+  {
+    id: 'news-5',
+    title: 'National Mathematics Olympiad Top Honours',
+    slug: 'national-mathematics-olympiad-top-honours',
+    summary: 'Four Academy scholars earn distinction certificates and qualify for the Asian Pacific Mathematics Olympiad.',
+    content: 'We are thrilled to announce that four students from Grade 10 and Grade 12 have achieved top percentile ranks in the National Mathematics Olympiad.\n\nTheir exceptional performance in combinatorial analysis, number theory, and geometric proofs earned them formal nominations to represent the national delegation.',
+    featuredImage: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800',
+    gallery: [],
+    category: 'ACHIEVEMENTS',
+    author: { id: 'admin-1', name: 'Dr. Arthur Pendelton', role: 'Principal & Academic Director' },
+    publishDate: '2026-07-02T00:00:00.000Z'
+  },
+  {
+    id: 'news-6',
+    title: 'Annual Sports Gala & Track Championship 2026',
+    slug: 'annual-sports-gala-and-track-championship-2026',
+    summary: 'Athletes set new academy sprint, relay, and badminton records during a thrilling 3-day championship.',
+    content: 'The campus athletic complex welcomed hundreds of students and parents for the 2026 Annual Sports Festival. Events spanned 100m sprint, 4x100m relays, football finals, and table tennis championships.\n\nCongratulations to all athletes for exemplifying sportsmanship, perseverance, and school spirit.',
+    featuredImage: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800',
+    gallery: [],
+    category: 'SPORTS',
+    author: { id: 'admin-5', name: 'Sports Department', role: 'Athletic Director' },
+    publishDate: '2026-06-20T00:00:00.000Z'
+  }
+];
+
+const FALLBACK_EVENTS = [
+  {
+    id: 'ev-1',
+    title: 'Fall Open House & Campus Tour 2026',
+    eventDate: '2026-10-15T10:00:00.000Z',
+    dateDisplay: 'OCT 15',
+    time: '10:00 AM - 2:00 PM',
+    location: 'Main Auditorium & STEM Labs',
+    category: 'Admissions',
+    summary: 'Prospective families are invited to explore classrooms, meet faculty, and experience student demo showcases.'
+  },
+  {
+    id: 'ev-2',
+    title: 'Annual STEM & Robotics Innovation Expo',
+    eventDate: '2026-10-28T09:00:00.000Z',
+    dateDisplay: 'OCT 28',
+    time: '9:00 AM - 4:00 PM',
+    location: 'AI Supercomputing Complex',
+    category: 'Competition',
+    summary: 'Students showcase autonomous obstacle-navigating rovers, IoT sensors, and software applications.'
+  },
+  {
+    id: 'ev-3',
+    title: 'Parent-Teacher Academic Review Symposium',
+    eventDate: '2026-11-10T11:00:00.000Z',
+    dateDisplay: 'NOV 10',
+    time: '11:00 AM - 3:30 PM',
+    location: 'Executive Conference Hall',
+    category: 'Governance',
+    summary: 'Comprehensive mid-term academic progress consultations between parents, counselors, and teachers.'
+  },
+  {
+    id: 'ev-4',
+    title: 'Inter-School Model United Nations (TESMUN 2026)',
+    eventDate: '2026-11-25T08:30:00.000Z',
+    dateDisplay: 'NOV 25',
+    time: '8:30 AM - 5:00 PM',
+    location: 'Central Lecture Halls',
+    category: 'Humanities',
+    summary: 'Three days of spirited diplomatic diplomacy and international policy resolution drafting.'
+  }
+];
+
+const FALLBACK_DOWNLOADS = [
+  {
+    id: 'dl-1',
+    title: 'Academic Prospectus & Curriculum Guide 2026-2027',
+    category: 'PROSPECTUS',
+    size: '4.8 MB',
+    format: 'PDF',
+    description: 'Complete overview of Secondary STEM, Cambridge IGCSE, A-Levels, and Humanities course offerings.'
+  },
+  {
+    id: 'dl-2',
+    title: 'Official Academic Calendar (2026-2027)',
+    category: 'CALENDAR',
+    size: '1.2 MB',
+    format: 'PDF',
+    description: 'Term dates, examination windows, sports festivals, public holidays, and parent conferences.'
+  },
+  {
+    id: 'dl-3',
+    title: 'Grade 9 & 10 Secondary STEM Syllabus Matrix',
+    category: 'SYLLABUS',
+    size: '2.5 MB',
+    format: 'PDF',
+    description: 'Curriculum breakdown for Robotics, Physics, Chemistry, and Advanced Mathematics.'
+  },
+  {
+    id: 'dl-4',
+    title: 'Grade 11 & 12 Humanities & A-Level Syllabi',
+    category: 'SYLLABUS',
+    size: '2.9 MB',
+    format: 'PDF',
+    description: 'Comprehensive subject guides for Economics, World Politics, Literature, and Media Studies.'
+  },
+  {
+    id: 'dl-5',
+    title: 'Admissions Registration & Scholarship Application Form',
+    category: 'ADMISSIONS',
+    size: '950 KB',
+    format: 'PDF',
+    description: 'Printable application package including financial aid questionnaire and document checklist.'
+  },
+  {
+    id: 'dl-6',
+    title: 'Campus Code of Conduct & Student Handbook',
+    category: 'HANDBOOK',
+    size: '1.8 MB',
+    format: 'PDF',
+    description: 'Institutional policies, laboratory safety rules, uniform guidelines, and attendance criteria.'
+  }
+];
+
+const FALLBACK_FACULTY = [
+  {
+    id: 'fac-1',
+    name: 'Dr. Arthur Pendelton',
+    role: 'Principal & Academic Director',
+    dept: 'Executive Leadership',
+    degrees: 'Ph.D. Educational Leadership (Oxford), M.Sc. Applied Physics',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600',
+    bio: 'Over 22 years leading premier international institutions in the UK, UAE, and Pakistan with a focus on holistic pedagogy.'
+  },
+  {
+    id: 'fac-2',
+    name: 'Eleanor Vance',
+    role: 'Head of Computer Science & Robotics',
+    dept: 'STEM Wing',
+    degrees: 'M.Sc. Artificial Intelligence & Robotics (Imperial College London)',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600',
+    bio: 'Mentor to championship-winning robotics teams and lead curriculum architect for secondary computing.'
+  },
+  {
+    id: 'fac-3',
+    name: 'Prof. Tariq Mansoor',
+    role: 'Head of Humanities & Social Sciences',
+    dept: 'Humanities Wing',
+    degrees: 'M.Phil. International Relations, B.A. (Hons) Literature',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600',
+    bio: 'Renowned debate adjudicator with 15+ years guiding students to national and international MUN awards.'
+  },
+  {
+    id: 'fac-4',
+    name: 'Dr. Sarah Al-Hashimi',
+    role: 'Lead Faculty - Pure Chemistry & Life Sciences',
+    dept: 'STEM Wing',
+    degrees: 'Ph.D. Bio-organic Chemistry, Cambridge Certified Instructor',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600',
+    bio: 'Pioneered experiential lab curriculum bridging molecular chemistry with modern environmental studies.'
+  },
+  {
+    id: 'fac-5',
+    name: 'Marcus Sterling',
+    role: 'Head of College Placement & University Counseling',
+    dept: 'Student Welfare',
+    degrees: 'M.Ed. Higher Education Guidance (Harvard GSE)',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600',
+    bio: 'Helped over 800 alumni secure admissions and scholarships at Ivy League, Russell Group, and top national universities.'
+  },
+  {
+    id: 'fac-6',
+    name: 'Zainab Qureshi',
+    role: 'Senior Instructor - Pure & Applied Mathematics',
+    dept: 'STEM Wing',
+    degrees: 'M.Sc. Mathematics, National Board Chief Examiner',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600',
+    bio: 'Specialist in advanced calculus, analytical geometry, and Olympiad competition problem solving.'
+  }
+];
 
 export const PublicWebsite = () => {
   const { addNotification, setCurrentView, switchToPortal, publicSiteConfig } = useApp();
@@ -35,6 +280,14 @@ export const PublicWebsite = () => {
 
   // Dynamic Homepage State
   const [homeData, setHomeData] = useState(null);
+
+  // News & Events State
+  const [newsArticles, setNewsArticles] = useState([]);
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [newsCategory, setNewsCategory] = useState('ALL');
+  const [newsSearchQuery, setNewsSearchQuery] = useState('');
+  const [newsTab, setNewsTab] = useState('articles'); // 'articles' | 'events'
+  const [eventsList, setEventsList] = useState([]);
 
   // Dynamic public configuration fallback helpers
   const heroCfg = publicSiteConfig?.hero || {
@@ -97,6 +350,24 @@ export const PublicWebsite = () => {
     if (page === 'home') {
       const hRes = await apiClient.get('/website/home');
       if (hRes.success && hRes.data) setHomeData(hRes.data);
+      // Pre-load news for the homepage highlights
+      const nRes = await apiClient.get('/website/news');
+      if (nRes.success && Array.isArray(nRes.data) && nRes.data.length > 0) {
+        setNewsArticles(nRes.data);
+      }
+    }
+
+    if (page === 'news' || page === 'events') {
+      const catStr = newsCategory !== 'ALL' ? `category=${encodeURIComponent(newsCategory)}&` : '';
+      const qStr = newsSearchQuery ? `q=${encodeURIComponent(newsSearchQuery)}` : '';
+      const nRes = await apiClient.get(`/website/news?${catStr}${qStr}`);
+      if (nRes.success && Array.isArray(nRes.data) && nRes.data.length > 0) {
+        setNewsArticles(nRes.data);
+      }
+      const eRes = await apiClient.get('/website/events');
+      if (eRes.success && eRes.data) {
+        setEventsList(Array.isArray(eRes.data) ? eRes.data : (eRes.data.events || []));
+      }
     }
 
     if (page === 'careers') {
@@ -129,7 +400,7 @@ export const PublicWebsite = () => {
   useEffect(() => {
     fetchPageContent(activePage);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [activePage, vacancyDepartment, downloadCategory, downloadSearchQuery, faqCategory, faqSearchQuery]);
+  }, [activePage, vacancyDepartment, downloadCategory, downloadSearchQuery, faqCategory, faqSearchQuery, newsCategory, newsSearchQuery]);
 
   const handleContactSubmit = async (e) => {
     e.preventDefault();
@@ -161,6 +432,43 @@ export const PublicWebsite = () => {
     } else {
       addNotification('Application submitted successfully!', 'success');
       setSelectedVacancy(null);
+    }
+  };
+
+  // Combined news items (dynamic from backend or fallback)
+  const allNewsItems = (newsArticles && newsArticles.length > 0) ? newsArticles : FALLBACK_NEWS_ARTICLES;
+
+  // Filtered news for the news page
+  const filteredNews = allNewsItems.filter(item => {
+    const matchesCategory = (newsCategory === 'ALL' || item.category === newsCategory);
+    const matchesQuery = !newsSearchQuery || (
+      (item.title && item.title.toLowerCase().includes(newsSearchQuery.toLowerCase())) ||
+      (item.summary && item.summary.toLowerCase().includes(newsSearchQuery.toLowerCase())) ||
+      (item.content && item.content.toLowerCase().includes(newsSearchQuery.toLowerCase()))
+    );
+    return matchesCategory && matchesQuery;
+  });
+
+  // Events list (dynamic or fallback)
+  const allEvents = (eventsList && eventsList.length > 0) ? eventsList : FALLBACK_EVENTS;
+
+  // Downloads list (dynamic or fallback)
+  const allDownloads = (downloadsList && downloadsList.length > 0) ? downloadsList : FALLBACK_DOWNLOADS;
+  const filteredDownloads = allDownloads.filter(item => {
+    const matchesCategory = (downloadCategory === 'ALL' || item.category === downloadCategory);
+    const matchesQuery = !downloadSearchQuery || (
+      (item.title && item.title.toLowerCase().includes(downloadSearchQuery.toLowerCase())) ||
+      (item.description && item.description.toLowerCase().includes(downloadSearchQuery.toLowerCase()))
+    );
+    return matchesCategory && matchesQuery;
+  });
+
+  const formatDate = (isoString) => {
+    if (!isoString) return '2026';
+    try {
+      return new Date(isoString).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    } catch {
+      return '2026';
     }
   };
 
@@ -515,6 +823,84 @@ export const PublicWebsite = () => {
                         Campus Community
                       </span>
                     </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* SECTION 6.5: LATEST ACADEMY HEADLINES & HAPPENINGS */}
+              <section className="bg-white py-16 md:py-20 border-t border-slate-200">
+                <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-8">
+                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                      <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
+                        <Newspaper className="w-3.5 h-3.5" />
+                        <span>CAMPUS PRESS & HEADLINES</span>
+                      </div>
+                      <h2 className="font-serif text-3xl md:text-4xl font-semibold text-slate-900 mt-1.5">
+                        Latest News & Happenings
+                      </h2>
+                      <p className="text-slate-600 text-xs md:text-sm mt-1 max-w-xl">
+                        Celebrating academic breakthroughs, STEM achievements, and vibrant student life across the academy.
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={() => {
+                        setNewsTab('articles');
+                        setActivePage('news');
+                      }}
+                      className="text-[#e05626] hover:text-[#c9461b] text-xs font-bold inline-flex items-center gap-1.5 self-start md:self-end group"
+                    >
+                      <span>View All News & Events</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {allNewsItems.slice(0, 3).map((article) => (
+                      <div 
+                        key={article.id} 
+                        className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group cursor-pointer"
+                        onClick={() => setSelectedArticle(article)}
+                      >
+                        <div className="relative h-44 overflow-hidden bg-slate-100">
+                          <img 
+                            src={article.featuredImage} 
+                            alt={article.title} 
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <span className="absolute top-3 left-3 bg-[#0b1c30]/90 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded shadow-sm">
+                            {article.category}
+                          </span>
+                        </div>
+
+                        <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-[11px] text-slate-500">
+                              <Calendar className="w-3 h-3 text-[#e05626]" />
+                              <span>{formatDate(article.publishDate)}</span>
+                              {article.author?.name && (
+                                <>
+                                  <span>•</span>
+                                  <span className="truncate max-w-[120px]">{article.author.name}</span>
+                                </>
+                              )}
+                            </div>
+                            <h3 className="font-serif font-bold text-slate-900 text-base leading-snug group-hover:text-[#e05626] transition-colors line-clamp-2">
+                              {article.title}
+                            </h3>
+                            <p className="text-slate-600 text-xs leading-relaxed line-clamp-3">
+                              {article.summary}
+                            </p>
+                          </div>
+
+                          <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#e05626]">
+                            <span>Read Full Story</span>
+                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </section>
@@ -881,50 +1267,259 @@ export const PublicWebsite = () => {
           )}
 
           {/* ========================================================================= */}
-          {/* 5. CAMPUS LIFE / NEWS PAGE                                                */}
+          {/* 5. CAMPUS LIFE / NEWS & EVENTS PAGE                                       */}
           {/* ========================================================================= */}
-          {activePage === 'news' && (
-            <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-12">
-              <div className="space-y-3">
-                <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest">CAMPUS VIBRANCY</div>
-                <h1 className="font-serif text-3xl md:text-5xl font-semibold text-slate-900">Campus Life & Events</h1>
-                <p className="text-slate-600 text-sm max-w-2xl leading-relaxed">
-                  Discover what makes life at The Education Space Academy inspiring, collaborative, and rewarding.
-                </p>
+          {(activePage === 'news' || activePage === 'events') && (
+            <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-10">
+              {/* Header */}
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200">
+                <div className="space-y-2">
+                  <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                    <Newspaper className="w-4 h-4" />
+                    <span>CAMPUS LIFE & PRESS</span>
+                  </div>
+                  <h1 className="font-serif text-3xl md:text-5xl font-semibold text-slate-900">
+                    News, Happenings & Events
+                  </h1>
+                  <p className="text-slate-600 text-sm max-w-2xl leading-relaxed">
+                    Explore the latest academic breakthroughs, technological achievements, campus events, and vibrant student activities at The Education Space Academy.
+                  </p>
+                </div>
+
+                {/* Tab Switcher */}
+                <div className="flex items-center bg-slate-100 p-1 rounded-md self-start md:self-end border border-slate-200">
+                  <button
+                    onClick={() => setNewsTab('articles')}
+                    className={`px-4 py-2 text-xs font-bold rounded transition-all flex items-center gap-2 ${
+                      newsTab === 'articles'
+                        ? 'bg-white text-slate-900 shadow-sm'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    <Newspaper className="w-3.5 h-3.5 text-[#e05626]" />
+                    <span>Academy News</span>
+                    <span className="bg-slate-100 text-slate-700 text-[10px] px-1.5 py-0.5 rounded-full font-bold">
+                      {allNewsItems.length}
+                    </span>
+                  </button>
+                  <button
+                    onClick={() => setNewsTab('events')}
+                    className={`px-4 py-2 text-xs font-bold rounded transition-all flex items-center gap-2 ${
+                      newsTab === 'events'
+                        ? 'bg-white text-slate-900 shadow-sm'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    <Calendar className="w-3.5 h-3.5 text-[#e05626]" />
+                    <span>Events Calendar</span>
+                    <span className="bg-slate-100 text-slate-700 text-[10px] px-1.5 py-0.5 rounded-full font-bold">
+                      {allEvents.length}
+                    </span>
+                  </button>
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm">
-                  <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600" alt="Robotics Championship" className="w-full h-44 object-cover" />
-                  <div className="p-5 space-y-2">
-                    <span className="text-[#e05626] text-[10px] font-bold uppercase tracking-wider">Robotics & AI</span>
-                    <h4 className="font-serif font-bold text-slate-900 text-base">Annual Robotics Expo 2026</h4>
-                    <p className="text-slate-600 text-xs leading-relaxed">Students showcased autonomous rovers, sensor-driven obstacle navigators, and IoT environmental monitors.</p>
+              {/* TAB 1: ACADEMY NEWS & ARTICLES */}
+              {newsTab === 'articles' && (
+                <div className="space-y-8">
+                  {/* Filters & Search Toolbar */}
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-[#f8f9fa] p-4 rounded-sm border border-slate-200">
+                    {/* Category Filter Pills */}
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-slate-500 text-xs font-semibold mr-1 flex items-center gap-1">
+                        <Filter className="w-3 h-3 text-[#e05626]" /> Filter:
+                      </span>
+                      {[
+                        { id: 'ALL', label: 'All Stories' },
+                        { id: 'ACHIEVEMENTS', label: 'Achievements' },
+                        { id: 'INFRASTRUCTURE', label: 'Infrastructure & Labs' },
+                        { id: 'ACADEMICS', label: 'Academics' },
+                        { id: 'CAMPUS_LIFE', label: 'Campus Life' },
+                        { id: 'SPORTS', label: 'Sports' }
+                      ].map((cat) => (
+                        <button
+                          key={cat.id}
+                          onClick={() => setNewsCategory(cat.id)}
+                          className={`text-xs font-medium px-3 py-1.5 rounded transition-all ${
+                            newsCategory === cat.id
+                              ? 'bg-[#e05626] text-white font-bold shadow-sm'
+                              : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-200'
+                          }`}
+                        >
+                          {cat.label}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Live Search Input */}
+                    <div className="relative min-w-[240px]">
+                      <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                      <input
+                        type="text"
+                        placeholder="Search headlines & stories..."
+                        value={newsSearchQuery}
+                        onChange={(e) => setNewsSearchQuery(e.target.value)}
+                        className="w-full text-xs pl-8 pr-3 py-1.5 bg-white border border-slate-200 rounded focus:border-[#e05626] focus:outline-none placeholder:text-slate-400"
+                      />
+                      {newsSearchQuery && (
+                        <button
+                          onClick={() => setNewsSearchQuery('')}
+                          className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 text-xs"
+                        >
+                          ×
+                        </button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Articles Grid */}
+                  {filteredNews.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {filteredNews.map((article) => (
+                        <article 
+                          key={article.id}
+                          className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col group cursor-pointer"
+                          onClick={() => setSelectedArticle(article)}
+                        >
+                          <div className="relative h-48 overflow-hidden bg-slate-100">
+                            <img 
+                              src={article.featuredImage} 
+                              alt={article.title} 
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute top-3 left-3 bg-[#0b1c30]/90 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded shadow-sm">
+                              {article.category}
+                            </div>
+                          </div>
+
+                          <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                            <div className="space-y-2">
+                              <div className="flex items-center gap-2 text-[11px] text-slate-500">
+                                <Calendar className="w-3 h-3 text-[#e05626]" />
+                                <span>{formatDate(article.publishDate)}</span>
+                                {article.author?.name && (
+                                  <>
+                                    <span>•</span>
+                                    <span className="truncate max-w-[130px]">{article.author.name}</span>
+                                  </>
+                                )}
+                              </div>
+
+                              <h3 className="font-serif font-bold text-slate-900 text-lg leading-snug group-hover:text-[#e05626] transition-colors line-clamp-2">
+                                {article.title}
+                              </h3>
+
+                              <p className="text-slate-600 text-xs leading-relaxed line-clamp-3">
+                                {article.summary}
+                              </p>
+                            </div>
+
+                            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#e05626]">
+                              <span>Read Full Story</span>
+                              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-16 bg-[#f8f9fa] border border-dashed border-slate-200 rounded-sm space-y-3">
+                      <Newspaper className="w-8 h-8 text-slate-400 mx-auto" />
+                      <h4 className="font-serif font-bold text-slate-800 text-base">No news articles found</h4>
+                      <p className="text-slate-500 text-xs">Try clearing your search query or selecting a different category filter.</p>
+                      <button
+                        onClick={() => {
+                          setNewsCategory('ALL');
+                          setNewsSearchQuery('');
+                        }}
+                        className="text-xs text-[#e05626] font-bold underline"
+                      >
+                        Reset All Filters
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* TAB 2: UPCOMING EVENTS CALENDAR */}
+              {newsTab === 'events' && (
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {allEvents.map((event) => (
+                      <div 
+                        key={event.id}
+                        className="bg-white border border-slate-200 rounded-sm p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-5 items-start"
+                      >
+                        {/* Date Block */}
+                        <div className="w-16 h-16 bg-[#0b1c30] text-white rounded flex flex-col items-center justify-center shrink-0 border border-slate-700">
+                          <span className="text-[10px] font-bold text-[#e05626] tracking-wider uppercase">
+                            {event.dateDisplay ? event.dateDisplay.split(' ')[0] : 'EVENT'}
+                          </span>
+                          <span className="text-xl font-bold font-serif leading-none mt-0.5">
+                            {event.dateDisplay ? event.dateDisplay.split(' ')[1] : '2026'}
+                          </span>
+                        </div>
+
+                        {/* Event Details */}
+                        <div className="flex-1 space-y-2">
+                          <div className="flex items-center gap-2">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#e05626] bg-orange-50 px-2 py-0.5 rounded">
+                              {event.category || 'Campus Event'}
+                            </span>
+                          </div>
+
+                          <h3 className="font-serif font-bold text-slate-900 text-lg leading-snug">
+                            {event.title}
+                          </h3>
+
+                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500">
+                            {event.time && (
+                              <span className="flex items-center gap-1.5">
+                                <Clock className="w-3.5 h-3.5 text-slate-400" />
+                                {event.time}
+                              </span>
+                            )}
+                            {event.location && (
+                              <span className="flex items-center gap-1.5">
+                                <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                                {event.location}
+                              </span>
+                            )}
+                          </div>
+
+                          <p className="text-slate-600 text-xs leading-relaxed pt-1">
+                            {event.summary || event.description}
+                          </p>
+
+                          <div className="pt-2">
+                            <button
+                              onClick={() => addNotification(`RSVP / inquiry registered for "${event.title}". Event details sent to admissions team.`, 'success')}
+                              className="bg-slate-100 hover:bg-[#e05626] hover:text-white text-slate-700 text-xs font-semibold px-3.5 py-1.5 rounded transition-colors inline-flex items-center gap-1.5"
+                            >
+                              <span>Register / RSVP for Event</span>
+                              <ArrowRight className="w-3 h-3" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
+              )}
 
-                <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm">
-                  <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600" alt="Leadership Council" className="w-full h-44 object-cover" />
-                  <div className="p-5 space-y-2">
-                    <span className="text-[#e05626] text-[10px] font-bold uppercase tracking-wider">Student Government</span>
-                    <h4 className="font-serif font-bold text-slate-900 text-base">Student Council Inauguration</h4>
-                    <p className="text-slate-600 text-xs leading-relaxed">Elected representatives pledge commitment to peer mentorship, campus sustainability, and student welfare.</p>
-                  </div>
-                </div>
-
-                <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm">
-                  <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600" alt="Campus Life" className="w-full h-44 object-cover" />
-                  <div className="p-5 space-y-2">
-                    <span className="text-[#e05626] text-[10px] font-bold uppercase tracking-wider">Community</span>
-                    <h4 className="font-serif font-bold text-slate-900 text-base">Inter-House Debating Gala</h4>
-                    <p className="text-slate-600 text-xs leading-relaxed">Spirited parliamentary debates tackling global geopolitics, climate adaptation, and digital privacy ethics.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4">
-                <button onClick={() => setActivePage('home')} className="text-slate-500 hover:text-slate-900 text-xs font-semibold">
+              {/* Navigation Back */}
+              <div className="pt-6 border-t border-slate-200 flex items-center justify-between">
+                <button 
+                  onClick={() => setActivePage('home')} 
+                  className="text-slate-500 hover:text-slate-900 text-xs font-semibold inline-flex items-center gap-1.5"
+                >
                   ← Return to Home
+                </button>
+                <button 
+                  onClick={() => setActivePage('apply-online')} 
+                  className="bg-[#e05626] hover:bg-[#c9461b] text-white text-xs font-semibold px-4 py-2 rounded shadow-sm"
+                >
+                  Apply for Admission
                 </button>
               </div>
             </div>
@@ -1160,6 +1755,427 @@ export const PublicWebsite = () => {
               </div>
             </div>
           )}
+
+          {/* ========================================================================= */}
+          {/* 10. DOWNLOADS RESOURCE CENTER                                             */}
+          {/* ========================================================================= */}
+          {activePage === 'downloads' && (
+            <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-8">
+              <div className="space-y-2">
+                <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
+                  <DownloadIcon className="w-3.5 h-3.5" />
+                  <span>DOWNLOADS & DOCUMENTATION</span>
+                </div>
+                <h1 className="font-serif text-3xl md:text-5xl font-semibold text-slate-900">
+                  Academic Resources & Forms
+                </h1>
+                <p className="text-slate-600 text-sm max-w-2xl leading-relaxed">
+                  Access institutional prospectuses, term calendars, Cambridge & Federal syllabi, and official application forms.
+                </p>
+              </div>
+
+              {/* Filters Toolbar */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#f8f9fa] p-4 rounded-sm border border-slate-200">
+                <div className="flex flex-wrap items-center gap-2">
+                  {['ALL', 'PROSPECTUS', 'CALENDAR', 'SYLLABUS', 'ADMISSIONS', 'HANDBOOK'].map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setDownloadCategory(cat)}
+                      className={`text-xs font-medium px-3 py-1.5 rounded transition-all ${
+                        downloadCategory === cat
+                          ? 'bg-[#e05626] text-white font-bold shadow-sm'
+                          : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-200'
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="relative min-w-[220px]">
+                  <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                  <input
+                    type="text"
+                    placeholder="Search documents..."
+                    value={downloadSearchQuery}
+                    onChange={(e) => setDownloadSearchQuery(e.target.value)}
+                    className="w-full text-xs pl-8 pr-3 py-1.5 bg-white border border-slate-200 rounded focus:border-[#e05626] focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Documents Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredDownloads.map((doc) => (
+                  <div key={doc.id} className="bg-white border border-slate-200 rounded-sm p-6 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#e05626] bg-orange-50 px-2 py-0.5 rounded">
+                          {doc.category}
+                        </span>
+                        <span className="text-[11px] text-slate-400 font-medium">
+                          {doc.format || 'PDF'} • {doc.size || '1.5 MB'}
+                        </span>
+                      </div>
+                      <h3 className="font-serif font-bold text-slate-900 text-base leading-snug">
+                        {doc.title}
+                      </h3>
+                      <p className="text-slate-600 text-xs leading-relaxed">
+                        {doc.description}
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={() => addNotification(`Downloaded ${doc.title} successfully.`, 'success')}
+                      className="w-full bg-slate-100 hover:bg-[#e05626] hover:text-white text-slate-700 text-xs font-semibold py-2 rounded transition-colors flex items-center justify-center gap-1.5"
+                    >
+                      <DownloadIcon className="w-3.5 h-3.5" />
+                      <span>Download File</span>
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-4">
+                <button onClick={() => setActivePage('home')} className="text-slate-500 hover:text-slate-900 text-xs font-semibold">
+                  ← Return to Home
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* 11. FEE STRUCTURE & SCHOLARSHIPS                                          */}
+          {/* ========================================================================= */}
+          {(activePage === 'fee-structure' || activePage === 'scholarships') && (
+            <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-12">
+              <div className="space-y-2">
+                <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
+                  <Award className="w-3.5 h-3.5" />
+                  <span>TRANSPARENT FINANCIAL GOVERNANCE</span>
+                </div>
+                <h1 className="font-serif text-3xl md:text-5xl font-semibold text-slate-900">
+                  Fee Schedule & Scholarships
+                </h1>
+                <p className="text-slate-600 text-sm max-w-2xl leading-relaxed">
+                  Clear, upfront tuition schedules and merit-based scholarship tiers for the 2026-2027 academic session.
+                </p>
+              </div>
+
+              {/* Fee Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Secondary STEM */}
+                <div className="bg-white border-2 border-slate-200 rounded-sm p-8 space-y-6 shadow-sm">
+                  <div className="space-y-1">
+                    <span className="text-[#e05626] text-xs font-bold uppercase tracking-wider">Grades 9 - 10</span>
+                    <h3 className="font-serif text-2xl font-bold text-slate-900">Secondary STEM Wing</h3>
+                    <p className="text-slate-500 text-xs">Includes Robotics, Physics & Chemistry laboratories</p>
+                  </div>
+
+                  <div className="space-y-3 divide-y divide-slate-100 text-xs text-slate-700">
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Admission Fee (One-Time)</span>
+                      <span className="font-bold text-slate-900">PKR 45,000</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Monthly Tuition Fee</span>
+                      <span className="font-bold text-slate-900">PKR 28,000</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">STEM & Robotics Lab Levy</span>
+                      <span className="font-bold text-slate-900">PKR 4,500 / month</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Security Deposit (Refundable)</span>
+                      <span className="font-bold text-slate-900">PKR 20,000</span>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => setActivePage('apply-online')}
+                    className="w-full bg-[#0b1c30] hover:bg-[#e05626] text-white text-xs font-bold py-3 rounded transition-colors"
+                  >
+                    Apply for Grade 9 - 10
+                  </button>
+                </div>
+
+                {/* Higher Secondary */}
+                <div className="bg-white border-2 border-[#e05626]/40 rounded-sm p-8 space-y-6 shadow-sm relative">
+                  <div className="absolute top-0 right-8 -translate-y-1/2 bg-[#e05626] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Most Enrolled
+                  </div>
+
+                  <div className="space-y-1">
+                    <span className="text-[#e05626] text-xs font-bold uppercase tracking-wider">Grades 11 - 12</span>
+                    <h3 className="font-serif text-2xl font-bold text-slate-900">Higher Secondary / A-Levels</h3>
+                    <p className="text-slate-500 text-xs">Cambridge A-Levels, Pre-Engineering & Humanities tracks</p>
+                  </div>
+
+                  <div className="space-y-3 divide-y divide-slate-100 text-xs text-slate-700">
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Admission Fee (One-Time)</span>
+                      <span className="font-bold text-slate-900">PKR 55,000</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Monthly Tuition Fee</span>
+                      <span className="font-bold text-slate-900">PKR 34,000</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Advanced Media & Computing Suite</span>
+                      <span className="font-bold text-slate-900">PKR 5,500 / month</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-medium">Security Deposit (Refundable)</span>
+                      <span className="font-bold text-slate-900">PKR 25,000</span>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => setActivePage('apply-online')}
+                    className="w-full bg-[#e05626] hover:bg-[#c9461b] text-white text-xs font-bold py-3 rounded transition-colors shadow-sm"
+                  >
+                    Apply for Grade 11 - 12
+                  </button>
+                </div>
+              </div>
+
+              {/* Scholarship Tiers */}
+              <div className="bg-[#f8f9fa] border border-slate-200 rounded-sm p-8 space-y-6">
+                <div>
+                  <span className="text-[#e05626] text-xs font-bold uppercase tracking-widest">MERIT & FINANCIAL AID</span>
+                  <h3 className="font-serif text-2xl font-bold text-slate-900 mt-1">Scholarship Policy 2026</h3>
+                  <p className="text-slate-600 text-xs mt-1">We believe financial constraints should never stand between an extraordinary mind and world-class education.</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="bg-white p-5 border border-slate-200 rounded-sm space-y-2">
+                    <div className="text-2xl font-serif font-bold text-[#e05626]">100% Waiver</div>
+                    <div className="font-bold text-xs text-slate-900">Presidential Gold Scholarship</div>
+                    <p className="text-slate-600 text-xs leading-relaxed">Awarded to candidates scoring 90%+ in Board Exams or winning national/international science Olympiads.</p>
+                  </div>
+
+                  <div className="bg-white p-5 border border-slate-200 rounded-sm space-y-2">
+                    <div className="text-2xl font-serif font-bold text-slate-800">50% Waiver</div>
+                    <div className="font-bold text-xs text-slate-900">Academic Distinction Scholarship</div>
+                    <p className="text-slate-600 text-xs leading-relaxed">Awarded to candidates scoring 85% to 89.9% in previous board examinations.</p>
+                  </div>
+
+                  <div className="bg-white p-5 border border-slate-200 rounded-sm space-y-2">
+                    <div className="text-2xl font-serif font-bold text-slate-800">25% Waiver</div>
+                    <div className="font-bold text-xs text-slate-900">Talent & Merit Scholarship</div>
+                    <p className="text-slate-600 text-xs leading-relaxed">Awarded to candidates scoring 80% to 84.9% or excelling in national sports/debating competitions.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <button onClick={() => setActivePage('home')} className="text-slate-500 hover:text-slate-900 text-xs font-semibold">
+                  ← Return to Home
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* 12. FACULTY & STAFF DIRECTORY                                             */}
+          {/* ========================================================================= */}
+          {activePage === 'faculty-staff' && (
+            <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-10">
+              <div className="space-y-2">
+                <div className="text-[#e05626] text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
+                  <Users className="w-3.5 h-3.5" />
+                  <span>DISTINGUISHED PEDAGOGY</span>
+                </div>
+                <h1 className="font-serif text-3xl md:text-5xl font-semibold text-slate-900">
+                  Faculty & Department Leadership
+                </h1>
+                <p className="text-slate-600 text-sm max-w-2xl leading-relaxed">
+                  Meet the master educators, research mentors, and university counselors dedicated to developing each scholar's potential.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {FALLBACK_FACULTY.map((fac) => (
+                  <div key={fac.id} className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                    <img 
+                      src={fac.image} 
+                      alt={fac.name} 
+                      className="w-full h-56 object-cover"
+                    />
+                    <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                      <div className="space-y-1.5">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#e05626] bg-orange-50 px-2 py-0.5 rounded">
+                          {fac.dept}
+                        </span>
+                        <h3 className="font-serif font-bold text-slate-900 text-lg leading-snug">
+                          {fac.name}
+                        </h3>
+                        <p className="text-[#0b1c30] text-xs font-semibold">
+                          {fac.role}
+                        </p>
+                        <p className="text-slate-500 text-[11px] italic">
+                          {fac.degrees}
+                        </p>
+                        <p className="text-slate-600 text-xs leading-relaxed pt-2">
+                          {fac.bio}
+                        </p>
+                      </div>
+
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
+                        <span>Office Hours: Mon - Fri</span>
+                        <button 
+                          onClick={() => addNotification(`Inquiry regarding ${fac.name} forwarded to the academic registrar.`, 'info')}
+                          className="text-[#e05626] hover:underline font-bold text-xs"
+                        >
+                          Contact Faculty
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-4">
+                <button onClick={() => setActivePage('home')} className="text-slate-500 hover:text-slate-900 text-xs font-semibold">
+                  ← Return to Home
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* ARTICLE READER MODAL (DETAILED STORY VIEW)                                */}
+      {/* ========================================================================= */}
+      {selectedArticle && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-in fade-in-50">
+          <div className="bg-white w-full max-w-3xl rounded-sm shadow-2xl border border-slate-200 overflow-hidden my-8 max-h-[90vh] flex flex-col">
+            {/* Modal Header Bar */}
+            <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-[#f8f9fa] shrink-0">
+              <div className="flex items-center gap-2">
+                <span className="bg-[#e05626] text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase tracking-wider">
+                  {selectedArticle.category}
+                </span>
+                <span className="text-xs text-slate-500">
+                  {formatDate(selectedArticle.publishDate)}
+                </span>
+              </div>
+
+              <button
+                onClick={() => setSelectedArticle(null)}
+                className="w-8 h-8 rounded-full hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-colors"
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Scrollable Story Content */}
+            <div className="overflow-y-auto p-6 md:p-8 space-y-6">
+              {/* Featured Image */}
+              {selectedArticle.featuredImage && (
+                <div className="relative h-64 sm:h-80 rounded-sm overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
+                  <img
+                    src={selectedArticle.featuredImage}
+                    alt={selectedArticle.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+
+              {/* Title & Attribution */}
+              <div className="space-y-3">
+                <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+                  {selectedArticle.title}
+                </h1>
+
+                {selectedArticle.author?.name && (
+                  <div className="flex items-center gap-3 pt-2 border-y border-slate-100 py-3 text-xs text-slate-600">
+                    <div className="w-8 h-8 rounded-full bg-[#0b1c30] text-white flex items-center justify-center font-bold text-xs">
+                      {selectedArticle.author.name.charAt(0)}
+                    </div>
+                    <div>
+                      <span className="font-bold text-slate-900 block">{selectedArticle.author.name}</span>
+                      <span className="text-slate-500 text-[11px]">{selectedArticle.author.role || 'Staff Contributor'}</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Summary Lead Block */}
+              {selectedArticle.summary && (
+                <div className="bg-orange-50/60 border-l-4 border-[#e05626] p-4 text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
+                  {selectedArticle.summary}
+                </div>
+              )}
+
+              {/* Story Body */}
+              <div className="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                {selectedArticle.content ? (
+                  selectedArticle.content.split('\n\n').map((paragraph, pIdx) => (
+                    <p key={pIdx}>{paragraph}</p>
+                  ))
+                ) : (
+                  <p>{selectedArticle.summary}</p>
+                )}
+              </div>
+
+              {/* Photo Gallery if present */}
+              {selectedArticle.gallery && selectedArticle.gallery.length > 0 && (
+                <div className="pt-6 border-t border-slate-200 space-y-4">
+                  <h4 className="font-serif font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                    <BookOpen className="w-3.5 h-3.5 text-[#e05626]" />
+                    <span>Associated Photo Gallery</span>
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {selectedArticle.gallery.map((imgItem, gIdx) => (
+                      <div key={gIdx} className="overflow-hidden rounded-sm border border-slate-200 bg-slate-50">
+                        <img src={imgItem.url} alt={imgItem.caption || 'Gallery photo'} className="w-full h-44 object-cover" />
+                        {imgItem.caption && (
+                          <div className="p-2.5 text-[11px] text-slate-600 italic bg-white border-t border-slate-100">
+                            {imgItem.caption}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 py-4 border-t border-slate-200 bg-[#f8f9fa] flex flex-wrap items-center justify-between gap-3 shrink-0">
+              <button
+                onClick={() => {
+                  navigator.clipboard?.writeText(window.location.href);
+                  addNotification('Article link copied to clipboard!', 'success');
+                }}
+                className="text-xs font-semibold text-slate-600 hover:text-slate-900 inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-white border border-slate-200 shadow-sm"
+              >
+                <Share2 className="w-3.5 h-3.5 text-[#e05626]" />
+                <span>Share Story</span>
+              </button>
+
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    setSelectedArticle(null);
+                    setActivePage('apply-online');
+                  }}
+                  className="bg-[#e05626] hover:bg-[#c9461b] text-white text-xs font-semibold px-4 py-2 rounded shadow-sm transition-colors"
+                >
+                  Apply to Academy
+                </button>
+                <button
+                  onClick={() => setSelectedArticle(null)}
+                  className="bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-semibold px-4 py-2 rounded transition-colors"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </PublicLayout>

@@ -28,8 +28,7 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
     { id: 'about', label: 'About TES' },
     { id: 'academics', label: 'Academics' },
     { id: 'admissions-info', label: 'Admissions' },
-    { id: 'news', label: 'Campus Life' },
-    { id: 'events', label: 'News & Events' },
+    { id: 'news', label: 'News & Events' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -38,9 +37,10 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
     { id: 'about', label: 'About TES' },
     { id: 'academics', label: 'Academics' },
     { id: 'admissions-info', label: 'Admissions' },
-    { id: 'news', label: 'Campus Life' },
-    { id: 'events', label: 'News & Events' },
+    { id: 'news', label: 'News & Events' },
     { id: 'careers', label: 'Careers' },
+    { id: 'downloads', label: 'Downloads' },
+    { id: 'faqs', label: 'FAQs' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -94,15 +94,14 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
                 (link.id === 'about' && (activePage === 'about' || activePage === 'principal-message' || activePage === 'faculty-staff')) ||
                 (link.id === 'academics' && (activePage === 'academics' || activePage === 'fee-structure' || activePage === 'scholarships' || activePage === 'downloads')) ||
                 (link.id === 'admissions-info' && (activePage === 'admissions-info' || activePage === 'apply-online')) ||
-                (link.id === 'news' && activePage === 'news') ||
-                (link.id === 'events' && (activePage === 'events' || activePage === 'careers' || activePage === 'faqs')) ||
+                (link.id === 'news' && (activePage === 'news' || activePage === 'events')) ||
                 (link.id === 'contact' && activePage === 'contact')
               );
 
               return (
                 <button
                   key={link.id}
-                  onClick={() => handleNavClick(link.id === 'events' ? 'news' : link.id)}
+                  onClick={() => handleNavClick(link.id)}
                   className={`py-1 transition-colors relative ${
                     isActive 
                       ? 'text-[#e05626] font-bold border-b-2 border-[#e05626]' 
@@ -169,7 +168,7 @@ export const PublicLayout = ({ children, activePage, onNavigate }) => {
             {MOBILE_NAV_LINKS.map((link) => (
               <button
                 key={link.id}
-                onClick={() => handleNavClick(link.id === 'events' ? 'news' : link.id)}
+                onClick={() => handleNavClick(link.id)}
                 className="w-full text-left py-2 text-slate-200 hover:text-[#e05626] font-semibold text-xs border-b border-slate-800/60"
               >
                 {link.label}
